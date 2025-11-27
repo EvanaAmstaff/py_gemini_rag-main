@@ -1,0 +1,3710 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/jdbc-result-set/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+JdbcResultSet in Google Apps Script mirrors
+java.sql.ResultSet
+for database result set interaction.
+It provides methods for navigation, data retrieval in various types, row manipulation, metadata, and status checks.
+Most functionalities require authorization with the
+https://www.googleapis.com/auth/script.external_request
+scope.
+Data can be retrieved and updated using methods that accept column index or label.
+The documentation details methods for retrieving result set properties and managing cursor movement and state.
+JdbcResultSet
+A JDBC
+ResultSet
+. For documentation of this class, see
+java.sql.ResultSet
+.
+Methods
+Method
+Return type
+Brief description
+absolute(row)
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#absolute(int)
+.
+afterLast()
+void
+For documentation of this method, see
+java.sql.ResultSet#afterLast()
+.
+beforeFirst()
+void
+For documentation of this method, see
+java.sql.ResultSet#beforeFirst()
+.
+cancelRowUpdates()
+void
+For documentation of this method, see
+java.sql.ResultSet#cancelRowUpdates()
+.
+clearWarnings()
+void
+For documentation of this method, see
+java.sql.ResultSet#clearWarnings()
+.
+close()
+void
+For documentation of this method, see
+java.sql.ResultSet#close()
+.
+deleteRow()
+void
+For documentation of this method, see
+java.sql.ResultSet#deleteRow()
+.
+findColumn(columnLabel)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#findColumn(String)
+.
+first()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#first()
+.
+getArray(columnIndex)
+JdbcArray
+For documentation of this method, see
+java.sql.ResultSet#getArray(int)
+.
+getArray(columnLabel)
+JdbcArray
+For documentation of this method, see
+java.sql.ResultSet#getArray(String)
+.
+getBigDecimal(columnIndex)
+BigNumber
+For documentation of this method, see
+java.sql.ResultSet#getBigDecimal(int)
+.
+getBigDecimal(columnLabel)
+BigNumber
+For documentation of this method, see
+java.sql.ResultSet#getBigDecimal(String)
+.
+getBlob(columnIndex)
+JdbcBlob
+For documentation of this method, see
+java.sql.ResultSet#getBlob(int)
+.
+getBlob(columnLabel)
+JdbcBlob
+For documentation of this method, see
+java.sql.ResultSet#getBlob(String)
+.
+getBoolean(columnIndex)
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#getBoolean(int)
+.
+getBoolean(columnLabel)
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#getBoolean(String)
+.
+getByte(columnIndex)
+Byte
+For documentation of this method, see
+java.sql.ResultSet#getByte(int)
+.
+getByte(columnLabel)
+Byte
+For documentation of this method, see
+java.sql.ResultSet#getByte(String)
+.
+getBytes(columnIndex)
+Byte[]
+For documentation of this method, see
+java.sql.ResultSet#getBytes(int)
+.
+getBytes(columnLabel)
+Byte[]
+For documentation of this method, see
+java.sql.ResultSet#getBytes(String)
+.
+getClob(columnIndex)
+JdbcClob
+For documentation of this method, see
+java.sql.ResultSet#getClob(int)
+.
+getClob(columnLabel)
+JdbcClob
+For documentation of this method, see
+java.sql.ResultSet#getClob(String)
+.
+getConcurrency()
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getConcurrency()
+.
+getCursorName()
+String
+For documentation of this method, see
+java.sql.ResultSet#getCursorName()
+.
+getDate(columnIndex)
+JdbcDate
+For documentation of this method, see
+java.sql.ResultSet#getDate(int)
+.
+getDate(columnIndex, timeZone)
+JdbcDate
+For documentation of this method, see
+java.sql.ResultSet#getDate(int, Calendar)
+.
+getDate(columnLabel)
+JdbcDate
+For documentation of this method, see
+java.sql.ResultSet#getDate(String)
+.
+getDate(columnLabel, timeZone)
+JdbcDate
+For documentation of this method, see
+java.sql.ResultSet#getDate(String, Calendar)
+.
+getDouble(columnIndex)
+Number
+For documentation of this method, see
+java.sql.ResultSet#getDouble(int)
+.
+getDouble(columnLabel)
+Number
+For documentation of this method, see
+java.sql.ResultSet#getDouble(String)
+.
+getFetchDirection()
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getFetchDirection()
+.
+getFetchSize()
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getFetchSize()
+.
+getFloat(columnIndex)
+Number
+For documentation of this method, see
+java.sql.ResultSet#getFloat(int)
+.
+getFloat(columnLabel)
+Number
+For documentation of this method, see
+java.sql.ResultSet#getFloat(String)
+.
+getHoldability()
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getHoldability()
+.
+getInt(columnIndex)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getInt(int)
+.
+getInt(columnLabel)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getInt(String)
+.
+getLong(columnIndex)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getLong(int)
+.
+getLong(columnLabel)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getLong(String)
+.
+getMetaData()
+JdbcResultSetMetaData
+For documentation of this method, see
+java.sql.ResultSet#getMetaData()
+.
+getNClob(columnIndex)
+JdbcClob
+For documentation of this method, see
+java.sql.ResultSet#getNClob(int)
+.
+getNClob(columnLabel)
+JdbcClob
+For documentation of this method, see
+java.sql.ResultSet#getNClob(String)
+.
+getNString(columnIndex)
+String
+For documentation of this method, see
+java.sql.ResultSet#getNString(int)
+.
+getNString(columnLabel)
+String
+For documentation of this method, see
+java.sql.ResultSet#getNString(String)
+.
+getObject(columnIndex)
+Object
+For documentation of this method, see
+java.sql.ResultSet#getObject(int)
+.
+getObject(columnLabel)
+Object
+For documentation of this method, see
+java.sql.ResultSet#getObject(String)
+.
+getRef(columnIndex)
+JdbcRef
+For documentation of this method, see
+java.sql.ResultSet#getRef(int)
+.
+getRef(columnLabel)
+JdbcRef
+For documentation of this method, see
+java.sql.ResultSet#getRef(String)
+.
+getRow()
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getRow()
+.
+getRowId(columnIndex)
+JdbcRowId
+For documentation of this method, see
+java.sql.ResultSet#getRowId(int)
+.
+getRowId(columnLabel)
+JdbcRowId
+For documentation of this method, see
+java.sql.ResultSet#getRowId(String)
+.
+getRows(queryString)
+Object[][]
+Returns all the rows from this
+ResultSet
+object.
+getRows(queryString, batchSize)
+Object[][]
+Returns up to
+batchSize
+rows from this
+ResultSet
+object.
+getSQLXML(columnIndex)
+JdbcSQLXML
+For documentation of this method, see
+java.sql.ResultSet#getSQLXML(int)
+.
+getSQLXML(columnLabel)
+JdbcSQLXML
+For documentation of this method, see
+java.sql.ResultSet#getSQLXML(String)
+.
+getShort(columnIndex)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getShort(int)
+.
+getShort(columnLabel)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getShort(String)
+.
+getStatement()
+JdbcStatement
+For documentation of this method, see
+java.sql.ResultSet#getStatement()
+.
+getString(columnIndex)
+String
+For documentation of this method, see
+java.sql.ResultSet#getString(int)
+.
+getString(columnLabel)
+String
+For documentation of this method, see
+java.sql.ResultSet#getString(String)
+.
+getTime(columnIndex)
+JdbcTime
+For documentation of this method, see
+java.sql.ResultSet#getTime(int)
+.
+getTime(columnIndex, timeZone)
+JdbcTime
+For documentation of this method, see
+java.sql.ResultSet#getTime(int, Calendar)
+.
+getTime(columnLabel)
+JdbcTime
+For documentation of this method, see
+java.sql.ResultSet#getTime(String)
+.
+getTime(columnLabel, timeZone)
+JdbcTime
+For documentation of this method, see
+java.sql.ResultSet#getTime(String, Calendar)
+.
+getTimestamp(columnIndex)
+JdbcTimestamp
+For documentation of this method, see
+java.sql.ResultSet#getTimestamp(int)
+.
+getTimestamp(columnIndex, timeZone)
+JdbcTimestamp
+For documentation of this method, see
+java.sql.ResultSet#getTimestamp(int, Calendar)
+.
+getTimestamp(columnLabel)
+JdbcTimestamp
+For documentation of this method, see
+java.sql.ResultSet#getTimestamp(String)
+.
+getTimestamp(columnLabel, timeZone)
+JdbcTimestamp
+For documentation of this method, see
+java.sql.ResultSet#getTimestamp(String, Calendar)
+.
+getType()
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getType()
+.
+getURL(columnIndex)
+String
+For documentation of this method, see
+java.sql.ResultSet#getURL(int)
+.
+getURL(columnLabel)
+String
+For documentation of this method, see
+java.sql.ResultSet#getURL(String)
+.
+getWarnings()
+String[]
+Returns the current set of warnings reported by the driver.
+insertRow()
+void
+For documentation of this method, see
+java.sql.ResultSet#insertRow()
+.
+isAfterLast()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#isAfterLast()
+.
+isBeforeFirst()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#isBeforeFirst()
+.
+isClosed()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#isClosed()
+.
+isFirst()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#isFirst()
+.
+isLast()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#isLast()
+.
+last()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#first()
+.
+moveToCurrentRow()
+void
+For documentation of this method, see
+java.sql.ResultSet#moveToCurrentRow()
+.
+moveToInsertRow()
+void
+For documentation of this method, see
+java.sql.ResultSet#moveToInsertRow()
+.
+next()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#next()
+.
+previous()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#previous()
+.
+refreshRow()
+void
+For documentation of this method, see
+java.sql.ResultSet#refreshRow()
+.
+relative(rows)
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#relative(int)
+.
+rowDeleted()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#rowDeleted()
+.
+rowInserted()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#rowInserted()
+.
+rowUpdated()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#rowUpdated()
+.
+setFetchDirection(direction)
+void
+For documentation of this method, see
+java.sql.ResultSet#setFetchDirection(int)
+.
+setFetchSize(rows)
+void
+For documentation of this method, see
+java.sql.ResultSet#setFetchSize(int)
+.
+updateArray(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateArray(int, Array)
+.
+updateArray(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateArray(String, Array)
+.
+updateBigDecimal(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBigDecimal(int, BigDecimal)
+.
+updateBigDecimal(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBigDecimal(String, BigDecimal)
+.
+updateBlob(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBlob(int, Blob)
+.
+updateBlob(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateRef(String, Blob)
+.
+updateBoolean(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBoolean(int, boolean)
+.
+updateBoolean(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBoolean(String, boolean)
+.
+updateByte(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateByte(int, byte)
+.
+updateByte(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateByte(String, byte)
+.
+updateBytes(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBytes(int, byte[])
+.
+updateBytes(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBytes(String, byte[])
+.
+updateClob(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateClob(int, Clob)
+.
+updateClob(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateClob(String, Clob)
+.
+updateDate(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateDate(int, Date)
+.
+updateDate(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateDate(String, Date)
+.
+updateDouble(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateDouble(int, double)
+.
+updateDouble(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateDouble(String, double)
+.
+updateFloat(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateFloat(int, float)
+.
+updateFloat(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateFloat(String, float)
+.
+updateInt(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateInt(int, int)
+.
+updateInt(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateInt(String, int)
+.
+updateLong(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateLong(int, long)
+.
+updateLong(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateLong(String, long)
+.
+updateNClob(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateNClob(int, NClob)
+.
+updateNClob(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateNClob(String, NClob)
+.
+updateNString(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateNString(int, String)
+.
+updateNString(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateNString(String, String)
+.
+updateNull(columnIndex)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateNull(int)
+.
+updateNull(columnLabel)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateNull(String)
+.
+updateObject(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateObject(int, Object)
+.
+updateObject(columnIndex, x, scaleOrLength)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateObject(int, Object, int)
+.
+updateObject(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateObject(String, Object)
+.
+updateObject(columnLabel, x, scaleOrLength)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateObject(String, Object, int)
+.
+updateRef(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateRef(int, Ref)
+.
+updateRef(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateRef(String, Ref)
+.
+updateRow()
+void
+For documentation of this method, see
+java.sql.ResultSet#updateRow()
+.
+updateRowId(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateRowId(int, RowId)
+.
+updateRowId(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateRowId(String, RowId)
+.
+updateSQLXML(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateSQLXML(int, SQLXML)
+.
+updateSQLXML(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateSQLXML(String, SQLXML)
+.
+updateShort(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateShort(int, short)
+.
+updateShort(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateShort(String, short)
+.
+updateString(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateString(int, String)
+.
+updateString(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateString(String, String)
+.
+updateTime(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateTime(int, Time)
+.
+updateTime(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateTime(String, Time)
+.
+updateTimestamp(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateTimestamp(int, Timestamp)
+.
+updateTimestamp(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateTimestamp(String, Timestamp)
+.
+wasNull()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#wasNull()
+.
+Detailed documentation
+absolute(row)
+For documentation of this method, see
+java.sql.ResultSet#absolute(int)
+.
+Parameters
+Name
+Type
+Description
+row
+Integer
+The number of the row to which the cursor moves to. A positive number indicates the
+    row number counting from the start of the result set, while a negative number indicates the
+    counting from the end of the result set.
+Return
+Boolean
+—
+true
+if the cursor is moved to a position in this result set;
+false
+if
+    the cursor is before the first row or after the last row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+afterLast()
+For documentation of this method, see
+java.sql.ResultSet#afterLast()
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+beforeFirst()
+For documentation of this method, see
+java.sql.ResultSet#beforeFirst()
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+cancelRowUpdates()
+For documentation of this method, see
+java.sql.ResultSet#cancelRowUpdates()
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+clearWarnings()
+For documentation of this method, see
+java.sql.ResultSet#clearWarnings()
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+close()
+For documentation of this method, see
+java.sql.ResultSet#close()
+.
+deleteRow()
+For documentation of this method, see
+java.sql.ResultSet#deleteRow()
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+findColumn(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#findColumn(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+Integer
+— The column index of the specified column.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+first()
+For documentation of this method, see
+java.sql.ResultSet#first()
+.
+Return
+Boolean
+—
+true
+if the cursor is on a valid row;
+false
+if there are no rows in the
+    result set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getArray(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getArray(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve the data from (the first column is 1,
+    the second is 2, and so on).
+Return
+JdbcArray
+— The value of the designated column in the current row of this result set as an array.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getArray(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getArray(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+JdbcArray
+— The value of the designated column in the current row of this result set as an array.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getBigDecimal(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getBigDecimal(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve the data from (the first column is 1,
+    the second is 2, and so on).
+Return
+BigNumber
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getBigDecimal(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getBigDecimal(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+BigNumber
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getBlob(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getBlob(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve the data from (the first column is 1,
+    the second is 2, and so on).
+Return
+JdbcBlob
+— The value of the designated column in the current row of this result set as a blob.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getBlob(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getBlob(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+JdbcBlob
+— The value of the designated column in the current row of this result set as a blob.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getBoolean(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getBoolean(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+Return
+Boolean
+— The column value;
+false
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getBoolean(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getBoolean(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+Boolean
+— The column value;
+false
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getByte(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getByte(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+Return
+Byte
+— The column value; 0 if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getByte(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getByte(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+Byte
+— The column value; 0 if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getBytes(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getBytes(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+Return
+Byte[]
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getBytes(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getBytes(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+Byte[]
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getClob(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getClob(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve the data from (the first column is 1,
+    the second is 2, and so on).
+Return
+JdbcClob
+— The value of the designated column in the current row of this result set as a clob.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getClob(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getClob(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+JdbcClob
+— The value of the designated column in the current row of this result set as a clob.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getConcurrency()
+For documentation of this method, see
+java.sql.ResultSet#getConcurrency()
+.
+Return
+Integer
+— The concurrency type, which is either
+Jdbc.ResultSet.CONCUR_READ_ONLY
+or
+Jdbc.ResultSet.CONCUR_UPDATABLE
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getCursorName()
+For documentation of this method, see
+java.sql.ResultSet#getCursorName()
+.
+Return
+String
+— The SQL name for this result set's cursor.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDate(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getDate(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+Return
+JdbcDate
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDate(columnIndex, timeZone)
+For documentation of this method, see
+java.sql.ResultSet#getDate(int, Calendar)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+timeZone
+String
+A time zone string used to construct
+java.lang.Calendar
+instance, which in turn is used to build the date. Several formats
+    of time zone strings are recognized: short IDs (such as
+PST
+,
+EST
+, and
+GMT
+), long IDs (such as
+US/Pacific
+and
+America/Los_Angeles
+), and
+    offsets (such as
+GMT+6:30
+).
+Return
+JdbcDate
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDate(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getDate(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+JdbcDate
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDate(columnLabel, timeZone)
+For documentation of this method, see
+java.sql.ResultSet#getDate(String, Calendar)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+timeZone
+String
+A time zone string used to construct
+java.lang.Calendar
+instance, which in turn is used to build the date. Several formats
+    of time zone strings are recognized: short IDs (such as
+PST
+,
+EST
+, and
+GMT
+), long IDs (such as
+US/Pacific
+and
+America/Los_Angeles
+), and
+    offsets (such as
+GMT+6:30
+).
+Return
+JdbcDate
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDouble(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getDouble(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+Return
+Number
+— The column value; 0 if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDouble(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getDouble(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+Number
+— The column value; 0 if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getFetchDirection()
+For documentation of this method, see
+java.sql.ResultSet#getFetchDirection()
+.
+Return
+Integer
+— The specified direction to set, which is either
+Jdbc.ResultSet.FETCH_FORWARD
+or
+Jdbc.ResultSet.FETCH_REVERSE
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getFetchSize()
+For documentation of this method, see
+java.sql.ResultSet#getFetchSize()
+.
+Return
+Integer
+— The current fetch size for this result set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getFloat(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getFloat(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+Return
+Number
+— The column value; 0 if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getFloat(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getFloat(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+Number
+— The column value; 0 if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getHoldability()
+For documentation of this method, see
+java.sql.ResultSet#getHoldability()
+.
+Return
+Integer
+— The holdability of this result set, which is either
+Jdbc.ResultSet.HOLD_CURSORS_OVER_COMMIT
+or
+Jdbc.ResultSet.CLOSE_CURSORS_AT_COMMIT
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getInt(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getInt(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+Return
+Integer
+— The column value; 0 if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getInt(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getInt(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+Integer
+— The column value; 0 if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getLong(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getLong(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+Return
+Integer
+— The column value; 0 if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getLong(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getLong(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+Integer
+— The column value; 0 if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMetaData()
+For documentation of this method, see
+java.sql.ResultSet#getMetaData()
+.
+Return
+JdbcResultSetMetaData
+— The number, types, and properties of this result set's columns.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getNClob(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getNClob(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve the data from (the first column is 1,
+    the second is 2, and so on).
+Return
+JdbcClob
+— The column value of the current row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getNClob(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getNClob(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+JdbcClob
+— The column value of the current row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getNString(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getNString(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve the data from (the first column is 1,
+    the second is 2, and so on).
+Return
+String
+— The column value of the current row;
+null
+if the value is SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getNString(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getNString(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+String
+— The column value of the current row;
+null
+if the value is SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getObject(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getObject(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve the data from (the first column is 1,
+    the second is 2, and so on).
+Return
+Object
+— The value of the designated column in the current row of this result set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getObject(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getObject(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+Object
+— The value of the designated column in the current row of this result set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getRef(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getRef(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve the data from (the first column is 1,
+    the second is 2, and so on).
+Return
+JdbcRef
+— The value of the designated column in the current row of this result set as a
+    reference.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getRef(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getRef(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+JdbcRef
+— The value of the designated column in the current row of this result set as a
+    reference.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getRow()
+For documentation of this method, see
+java.sql.ResultSet#getRow()
+.
+Return
+Integer
+— The current row number, or 0 if there is no current row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getRowId(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getRowId(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve the data from (the first column is 1,
+    the second is 2, and so on).
+Return
+JdbcRowId
+— The column row ID value;
+null
+if the value is SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getRowId(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getRowId(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+JdbcRowId
+— The column row ID value;
+null
+if the value is SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getRows(queryString)
+Returns all the rows from this
+ResultSet
+object.
+The
+queryString
+consists of comma-separated calls to getter methods of this
+JdbcResultSet
+, for example:
+"getString(1), getDouble('price'), getDate(3, 'UTC')"
+.
+Supported methods include
+getString
+,
+getInt
+,
+getDouble
+,
+getDate
+, etc. Arguments can be integer column indices (1-based) or single/double quoted string
+column labels.
+Usage: For example, to read column 1 from result set, instead of iterating using
+next()
+, use
+getRows
+, shown in the following examples.
+The following example uses
+next()
+:
+while (rs.next()) {
+  Logger.log(rs.getString(1));
+}
+Use
+getRows()
+for better performance, in the following way:
+var
+rows
+=
+rs
+.
+getRows
+(
+"getString(1)"
+);
+for
+(
+var
+i
+=
+0
+;
+i
+<
+rows
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+rows
+[
+i
+][
+0
+]
+);
+}
+Note:
+For large results, you can use
+getRows(queryString, batchSize)
+for pagination.
+Parameters
+Name
+Type
+Description
+queryString
+String
+The SQL query string used to generate this result set.
+Return
+Object[][]
+— The current rows from this
+ResultSet
+object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getRows(queryString, batchSize)
+Returns up to
+batchSize
+rows from this
+ResultSet
+object. Consecutively calling
+this method starts iteration from where it left in previous iteration.
+Usage:
+var
+rows
+;
+do
+{
+rows
+=
+rs
+.
+getRows
+(
+"getString(1)"
+,
+100
+);
+for
+(
+var
+i
+=
+0
+;
+i
+<
+rows
+.
+length
+;
+i
+++
+)
+{
+Logger
+.
+log
+(
+rows
+[
+i
+][
+0
+]
+);
+}
+}
+while
+(
+rows
+.
+length
+>
+0
+);
+Parameters
+Name
+Type
+Description
+queryString
+String
+The SQL query string used to generate this result set.
+batchSize
+Integer
+The maximum number of rows to return in single call.
+Return
+Object[][]
+— The current rows from this
+ResultSet
+object.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getSQLXML(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getSQLXML(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve the data from (the first column is 1,
+    the second is 2, and so on).
+Return
+JdbcSQLXML
+— The column value of the current row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getSQLXML(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getSQLXML(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+JdbcSQLXML
+— The column value of the current row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getShort(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getShort(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+Return
+Integer
+— The column value; 0 if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getShort(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getShort(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+Integer
+— The column value; 0 if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getStatement()
+For documentation of this method, see
+java.sql.ResultSet#getStatement()
+.
+Return
+JdbcStatement
+— The statement that produced this result set, or
+null
+if the result set was
+    produced some other way.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getString(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getString(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+Return
+String
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getString(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getString(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+String
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTime(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getTime(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+Return
+JdbcTime
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTime(columnIndex, timeZone)
+For documentation of this method, see
+java.sql.ResultSet#getTime(int, Calendar)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+timeZone
+String
+A time zone string used to construct
+java.lang.Calendar
+instance, which in turn is used to build the date. Several formats
+    of time zone strings are recognized: short IDs (such as
+PST
+,
+EST
+, and
+GMT
+), long IDs (such as
+US/Pacific
+and
+America/Los_Angeles
+), and
+    offsets (such as
+GMT+6:30
+).
+Return
+JdbcTime
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTime(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getTime(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+JdbcTime
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTime(columnLabel, timeZone)
+For documentation of this method, see
+java.sql.ResultSet#getTime(String, Calendar)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+timeZone
+String
+A time zone string used to construct
+java.lang.Calendar
+instance, which in turn is used to build the date. Several formats
+    of time zone strings are recognized: short IDs (such as
+PST
+,
+EST
+, and
+GMT
+), long IDs (such as
+US/Pacific
+and
+America/Los_Angeles
+), and
+    offsets (such as
+GMT+6:30
+).
+Return
+JdbcTime
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTimestamp(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getTimestamp(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+Return
+JdbcTimestamp
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTimestamp(columnIndex, timeZone)
+For documentation of this method, see
+java.sql.ResultSet#getTimestamp(int, Calendar)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve (the first column is 1, the second is 2,
+    and so on).
+timeZone
+String
+A time zone string used to construct
+java.lang.Calendar
+instance, which in turn is used to build the date. Several formats
+    of time zone strings are recognized: short IDs (such as
+PST
+,
+EST
+, and
+GMT
+), long IDs (such as
+US/Pacific
+and
+America/Los_Angeles
+), and
+    offsets (such as
+GMT+6:30
+).
+Return
+JdbcTimestamp
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTimestamp(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getTimestamp(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+JdbcTimestamp
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTimestamp(columnLabel, timeZone)
+For documentation of this method, see
+java.sql.ResultSet#getTimestamp(String, Calendar)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+timeZone
+String
+A time zone string used to construct
+java.lang.Calendar
+instance, which in turn is used to build the date. Several formats
+    of time zone strings are recognized: short IDs (such as
+PST
+,
+EST
+, and
+GMT
+), long IDs (such as
+US/Pacific
+and
+America/Los_Angeles
+), and
+    offsets (such as
+GMT+6:30
+).
+Return
+JdbcTimestamp
+— The column value;
+null
+if the value was SQL
+NULL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getType()
+For documentation of this method, see
+java.sql.ResultSet#getType()
+.
+Return
+Integer
+— The type of this result set, which is one of
+Jdbc.ResultSet.TYPE_FORWARD_ONLY
+,
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+, or
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getURL(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#getURL(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to retrieve the data from (the first column is 1,
+    the second is 2, and so on).
+Return
+String
+— The URL value of the designated column in the current row of this result set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getURL(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#getURL(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Return
+String
+— The URL value of the designated column in the current row of this result set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getWarnings()
+Returns the current set of warnings reported by the driver.
+Return
+String[]
+— The current set of warnings.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+insertRow()
+For documentation of this method, see
+java.sql.ResultSet#insertRow()
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+isAfterLast()
+For documentation of this method, see
+java.sql.ResultSet#isAfterLast()
+.
+Return
+Boolean
+—
+true
+if the cursor is after the last row;
+false
+if it is in any other
+    position or if the result set contains no rows.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+isBeforeFirst()
+For documentation of this method, see
+java.sql.ResultSet#isBeforeFirst()
+.
+Return
+Boolean
+—
+true
+if the cursor is before the first row;
+false
+if it is in any other
+    position or if the result set contains no rows.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+isClosed()
+For documentation of this method, see
+java.sql.ResultSet#isClosed()
+.
+Return
+Boolean
+—
+true
+if this result set is closed;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+isFirst()
+For documentation of this method, see
+java.sql.ResultSet#isFirst()
+.
+Return
+Boolean
+—
+true
+if the cursor is on the first row;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+isLast()
+For documentation of this method, see
+java.sql.ResultSet#isLast()
+.
+Return
+Boolean
+—
+true
+if the cursor is on the last row;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+last()
+For documentation of this method, see
+java.sql.ResultSet#first()
+.
+Return
+Boolean
+—
+true
+if the cursor is on a valid row;
+false
+if there are no rows in the
+    result set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+moveToCurrentRow()
+For documentation of this method, see
+java.sql.ResultSet#moveToCurrentRow()
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+moveToInsertRow()
+For documentation of this method, see
+java.sql.ResultSet#moveToInsertRow()
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+next()
+For documentation of this method, see
+java.sql.ResultSet#next()
+.
+Return
+Boolean
+—
+true
+if the new current row is valid;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+previous()
+For documentation of this method, see
+java.sql.ResultSet#previous()
+.
+Return
+Boolean
+—
+true
+if the cursor is on a valid row;
+false
+if the cursor is positioned
+    before the first row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+refreshRow()
+For documentation of this method, see
+java.sql.ResultSet#refreshRow()
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+relative(rows)
+For documentation of this method, see
+java.sql.ResultSet#relative(int)
+.
+Parameters
+Name
+Type
+Description
+rows
+Integer
+The number row steps to move the cursor. A positive number moves the cursor
+    forward, while a negative number moves the cursor backward.
+Return
+Boolean
+—
+true
+if the cursor is on a row;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+rowDeleted()
+For documentation of this method, see
+java.sql.ResultSet#rowDeleted()
+.
+Return
+Boolean
+—
+true
+if the current row was visibly deleted;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+rowInserted()
+For documentation of this method, see
+java.sql.ResultSet#rowInserted()
+.
+Return
+Boolean
+—
+true
+if the current row was visibly inserted;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+rowUpdated()
+For documentation of this method, see
+java.sql.ResultSet#rowUpdated()
+.
+Return
+Boolean
+—
+true
+if the current row was visibly updated;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+setFetchDirection(direction)
+For documentation of this method, see
+java.sql.ResultSet#setFetchDirection(int)
+.
+Parameters
+Name
+Type
+Description
+direction
+Integer
+The specified direction to set, which is either
+Jdbc.ResultSet.FETCH_FORWARD
+or
+Jdbc.ResultSet.FETCH_REVERSE
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+setFetchSize(rows)
+For documentation of this method, see
+java.sql.ResultSet#setFetchSize(int)
+.
+Parameters
+Name
+Type
+Description
+rows
+Integer
+The number of rows to fetch.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateArray(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateArray(int, Array)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+JdbcArray
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateArray(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateArray(String, Array)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+JdbcArray
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateBigDecimal(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateBigDecimal(int, BigDecimal)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+BigNumber
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateBigDecimal(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateBigDecimal(String, BigDecimal)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+BigNumber
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateBlob(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateBlob(int, Blob)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+JdbcBlob
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateBlob(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateRef(String, Blob)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+JdbcBlob
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateBoolean(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateBoolean(int, boolean)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+Boolean
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateBoolean(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateBoolean(String, boolean)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+Boolean
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateByte(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateByte(int, byte)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+Byte
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateByte(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateByte(String, byte)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+Byte
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateBytes(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateBytes(int, byte[])
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+Byte[]
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateBytes(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateBytes(String, byte[])
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+Byte[]
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateClob(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateClob(int, Clob)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+JdbcClob
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateClob(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateClob(String, Clob)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+JdbcClob
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateDate(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateDate(int, Date)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+JdbcDate
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateDate(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateDate(String, Date)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+JdbcDate
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateDouble(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateDouble(int, double)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+Number
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateDouble(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateDouble(String, double)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+Number
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateFloat(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateFloat(int, float)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+Number
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateFloat(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateFloat(String, float)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+Number
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateInt(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateInt(int, int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+Integer
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateInt(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateInt(String, int)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+Integer
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateLong(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateLong(int, long)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+Integer
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateLong(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateLong(String, long)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+Integer
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateNClob(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateNClob(int, NClob)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+JdbcClob
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateNClob(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateNClob(String, NClob)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+JdbcClob
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateNString(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateNString(int, String)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+String
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateNString(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateNString(String, String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+String
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateNull(columnIndex)
+For documentation of this method, see
+java.sql.ResultSet#updateNull(int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateNull(columnLabel)
+For documentation of this method, see
+java.sql.ResultSet#updateNull(String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateObject(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateObject(int, Object)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+Object
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateObject(columnIndex, x, scaleOrLength)
+For documentation of this method, see
+java.sql.ResultSet#updateObject(int, Object, int)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+Object
+The new column value.
+scaleOrLength
+Integer
+The number of digits after the decimal for
+BigDecimal
+types, or
+    the length of data for
+InputStream
+or
+Reader
+types. Ignored for all other
+    types.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateObject(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateObject(String, Object)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+Object
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateObject(columnLabel, x, scaleOrLength)
+For documentation of this method, see
+java.sql.ResultSet#updateObject(String, Object, int)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+Object
+The new column value.
+scaleOrLength
+Integer
+The number of digits after the decimal for
+BigDecimal
+types, or
+    the length of data for
+InputStream
+or
+Reader
+types. Ignored for all other
+    types.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateRef(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateRef(int, Ref)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+JdbcRef
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateRef(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateRef(String, Ref)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+JdbcRef
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateRow()
+For documentation of this method, see
+java.sql.ResultSet#updateRow()
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateRowId(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateRowId(int, RowId)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+JdbcRowId
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateRowId(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateRowId(String, RowId)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+JdbcRowId
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateSQLXML(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateSQLXML(int, SQLXML)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+JdbcSQLXML
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateSQLXML(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateSQLXML(String, SQLXML)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+JdbcSQLXML
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateShort(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateShort(int, short)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+Integer
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateShort(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateShort(String, short)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+Integer
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateString(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateString(int, String)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+String
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateString(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateString(String, String)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+String
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateTime(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateTime(int, Time)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+JdbcTime
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateTime(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateTime(String, Time)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+JdbcTime
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateTimestamp(columnIndex, x)
+For documentation of this method, see
+java.sql.ResultSet#updateTimestamp(int, Timestamp)
+.
+Parameters
+Name
+Type
+Description
+columnIndex
+Integer
+The index of the column to update (the first column is 1, the second is 2,
+    and so on).
+x
+JdbcTimestamp
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updateTimestamp(columnLabel, x)
+For documentation of this method, see
+java.sql.ResultSet#updateTimestamp(String, Timestamp)
+.
+Parameters
+Name
+Type
+Description
+columnLabel
+String
+The label for the column, specified with the SQL AS clause. If the AS clause
+    wasn't specified, then the label is the name of the column.
+x
+JdbcTimestamp
+The new column value.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+wasNull()
+For documentation of this method, see
+java.sql.ResultSet#wasNull()
+.
+Return
+Boolean
+—
+true
+if the last column read was SQL
+NULL
+;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request

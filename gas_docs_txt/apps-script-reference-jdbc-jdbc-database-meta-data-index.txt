@@ -1,0 +1,4317 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/jdbc-database-meta-data/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+JdbcDatabaseMetaData
+provides information about a database and mirrors
+java.sql.DatabaseMetaData
+functionality.
+Key methods retrieve metadata about database elements, provide database and driver details, indicate database capabilities with boolean values, and return information about naming conventions and length limits.
+Methods are also available to get details on numeric, string, system, and time/date functions, as well as transaction and result set properties and the type of SQLSTATE returned.
+All methods of
+JdbcDatabaseMetaData
+are documented in the
+java.sql.DatabaseMetaData
+class and generally require
+https://www.googleapis.com/auth/script.external_request
+authorization.
+Numerous methods check for database support of specific features, such as different result set types, savepoints, schema inclusion in statements, subqueries, transactions, and UNION operations.
+JdbcDatabaseMetaData
+A JDBC database metadata object. For documentation of this class, see
+java.sql.DatabaseMetaData
+.
+Methods
+Method
+Return type
+Brief description
+allProceduresAreCallable()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#allProceduresAreCallable()
+.
+allTablesAreSelectable()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#allTablesAreSelectable()
+.
+autoCommitFailureClosesAllResultSets()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#autoCommitFailureClosesAllResultSets()
+.
+dataDefinitionCausesTransactionCommit()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#dataDefinitionCausesTransactionCommit()
+.
+dataDefinitionIgnoredInTransactions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#dataDefinitionIgnoredInTransactions()
+.
+deletesAreDetected(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#deletesAreDetected(int)
+.
+doesMaxRowSizeIncludeBlobs()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#doesMaxRowSizeIncludeBlobs()
+.
+getAttributes(catalog, schemaPattern, typeNamePattern, attributeNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getAttributes(String, String, String, String)
+.
+getBestRowIdentifier(catalog, schema, table, scope, nullable)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getBestRowIdentifier(String, String, String, int, boolean)
+.
+getCatalogSeparator()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getCatalogSeparator()
+.
+getCatalogTerm()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getCatalogTerm()
+.
+getCatalogs()
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getCatalogs()
+.
+getClientInfoProperties()
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getClientInfoProperties()
+.
+getColumnPrivileges(catalog, schema, table, columnNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getColumnPrivileges(String, String, String, String)
+.
+getColumns(catalog, schemaPattern, tableNamePattern, columnNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getColumns(String, String, String, String)
+.
+getConnection()
+JdbcConnection
+For documentation of this method, see
+java.sql.DatabaseMetaData#getConnection()
+.
+getCrossReference(parentCatalog, parentSchema, parentTable, foreignCatalog, foreignSchema, foreignTable)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getCrossReference(String, String, String,
+     String, String, String)
+.
+getDatabaseMajorVersion()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDatabaseMajorVersion()
+.
+getDatabaseMinorVersion()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDatabaseMinorVersion()
+.
+getDatabaseProductName()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDatabaseProductName()
+.
+getDatabaseProductVersion()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDatabaseProductVersion()
+.
+getDefaultTransactionIsolation()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDefaultTransactionIsolation()
+.
+getDriverMajorVersion()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDriverMajorVersion()
+.
+getDriverMinorVersion()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDriverMinorVersion()
+.
+getDriverName()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDriverName()
+.
+getDriverVersion()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDriverVersion()
+.
+getExportedKeys(catalog, schema, table)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getImportedKeys(String, String, String)
+.
+getExtraNameCharacters()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getExtraNameCharacters()
+.
+getFunctionColumns(catalog, schemaPattern, functionNamePattern, columnNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getFunctionColumns(String, String, String, String)
+.
+getFunctions(catalog, schemaPattern, functionNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getFunctions(String, String, String)
+.
+getIdentifierQuoteString()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getIdentifierQuoteString()
+.
+getImportedKeys(catalog, schema, table)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getImportedKeys(String, String, String)
+.
+getIndexInfo(catalog, schema, table, unique, approximate)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getIndexInfo(String, String, String, boolean, boolean)
+.
+getJDBCMajorVersion()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getJDBCMajorVersion()
+.
+getJDBCMinorVersion()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getJDBCMinorVersion()
+.
+getMaxBinaryLiteralLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxBinaryLiteralLength()
+.
+getMaxCatalogNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxCatalogNameLength()
+.
+getMaxCharLiteralLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxCharLiteralLength()
+.
+getMaxColumnNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnNameLength()
+.
+getMaxColumnsInGroupBy()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInGroupBy()
+.
+getMaxColumnsInIndex()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInIndex()
+.
+getMaxColumnsInOrderBy()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInOrderBy()
+.
+getMaxColumnsInSelect()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInSelect()
+.
+getMaxColumnsInTable()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInTable()
+.
+getMaxConnections()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxConnections()
+.
+getMaxCursorNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxCursorNameLength()
+.
+getMaxIndexLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxIndexLength()
+.
+getMaxProcedureNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxProcedureNameLength()
+.
+getMaxRowSize()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxRowSize()
+.
+getMaxSchemaNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxSchemaNameLength()
+.
+getMaxStatementLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxStatementLength()
+.
+getMaxStatements()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxStatements()
+.
+getMaxTableNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxTableNameLength()
+.
+getMaxTablesInSelect()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxTablesInSelect()
+.
+getMaxUserNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxUserNameLength()
+.
+getNumericFunctions()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getNumericFunctions()
+.
+getPrimaryKeys(catalog, schema, table)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getPrimaryKeys(String, String, String)
+.
+getProcedureColumns(catalog, schemaPattern, procedureNamePattern, columnNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getProcedureColumns(String, String, String, String)
+.
+getProcedureTerm()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getProcedureTerm()
+.
+getProcedures(catalog, schemaPattern, procedureNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getProcedures(String, String, String)
+.
+getResultSetHoldability()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getResultSetHoldability()
+.
+getRowIdLifetime()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getRowIdLifetime()
+.
+getSQLKeywords()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSQLKeywords()
+.
+getSQLStateType()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSQLStateType()
+.
+getSchemaTerm()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSchemaTerm()
+.
+getSchemas()
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSchemas()
+.
+getSchemas(catalog, schemaPattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSchemas()
+.
+getSearchStringEscape()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSearchStringEscape()
+.
+getStringFunctions()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getStringFunctions()
+.
+getSuperTables(catalog, schemaPattern, tableNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSuperTables(String, String,String)
+.
+getSuperTypes(catalog, schemaPattern, typeNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSuperTypes(String, String, String)
+.
+getSystemFunctions()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSystemFunctions()
+.
+getTablePrivileges(catalog, schemaPattern, tableNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTablePrivileges(String, String, String)
+.
+getTableTypes()
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTableTypes()
+.
+getTables(catalog, schemaPattern, tableNamePattern, types)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTables(String, String, String, String[])
+.
+getTimeDateFunctions()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTimeDateFunctions()
+.
+getTypeInfo()
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTypeInfo()
+.
+getUDTs(catalog, schemaPattern, typeNamePattern, types)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getUDTs(String, String, String, int[])
+.
+getURL()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getURL()
+.
+getUserName()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getUserName()
+.
+getVersionColumns(catalog, schema, table)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getVersionColumns(String, String, String)
+.
+insertsAreDetected(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#insertsAreDetected(int)
+.
+isCatalogAtStart()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#isCatalogAtStart()
+.
+isReadOnly()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#isReadOnly()
+.
+locatorsUpdateCopy()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#locatorsUpdateCopy()
+.
+nullPlusNonNullIsNull()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullPlusNonNullIsNull()
+.
+nullsAreSortedAtEnd()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullsAreSortedAtEnd()
+.
+nullsAreSortedAtStart()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullsAreSortedAtStart()
+.
+nullsAreSortedHigh()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullsAreSortedHigh()
+.
+nullsAreSortedLow()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullsAreSortedLow()
+.
+othersDeletesAreVisible(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#othersDeletesAreVisible(int)
+.
+othersInsertsAreVisible(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#othersInsertsAreVisible(int)
+.
+othersUpdatesAreVisible(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#othersUpdatesAreVisible(int)
+.
+ownDeletesAreVisible(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#ownDeletesAreVisible(int)
+.
+ownInsertsAreVisible(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#ownInsertsAreVisible(int)
+.
+ownUpdatesAreVisible(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#ownUpdatesAreVisible(int)
+.
+storesLowerCaseIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesLowerCaseIdentifiers()
+.
+storesLowerCaseQuotedIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesLowerCaseQuotedIdentifiers()
+.
+storesMixedCaseIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesMixedCaseIdentifiers()
+.
+storesMixedCaseQuotedIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesMixedCaseQuotedIdentifiers()
+.
+storesUpperCaseIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesUpperCaseIdentifiers()
+.
+storesUpperCaseQuotedIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesUpperCaseQuotedIdentifiers()
+.
+supportsANSI92EntryLevelSQL()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsANSI92EntryLevelSQL()
+.
+supportsANSI92FullSQL()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsANSI92FullSQL()
+.
+supportsANSI92IntermediateSQL()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsANSI92IntermediateSQL()
+.
+supportsAlterTableWithAddColumn()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsAlterTableWithAddColumn()
+.
+supportsAlterTableWithDropColumn()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsAlterTableWithDropColumn()
+.
+supportsBatchUpdates()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsBatchUpdates()
+.
+supportsCatalogsInDataManipulation()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInDataManipulation()
+.
+supportsCatalogsInIndexDefinitions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInIndexDefinitions()
+.
+supportsCatalogsInPrivilegeDefinitions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInPrivilegeDefinitions()
+.
+supportsCatalogsInProcedureCalls()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInProcedureCalls()
+.
+supportsCatalogsInTableDefinitions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInTableDefinitions()
+.
+supportsColumnAliasing()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsColumnAliasing()
+.
+supportsConvert()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsConvert()
+.
+supportsConvert(fromType, toType)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsConvert(int, int)
+.
+supportsCoreSQLGrammar()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCoreSQLGrammar()
+.
+supportsCorrelatedSubqueries()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCorrelatedSubqueries()
+.
+supportsDataDefinitionAndDataManipulationTransactions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsDataDefinitionAndDataManipulationTransactions()
+.
+supportsDataManipulationTransactionsOnly()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsDataManipulationTransactionsOnly()
+.
+supportsDifferentTableCorrelationNames()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsDifferentTableCorrelationNames()
+.
+supportsExpressionsInOrderBy()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsExpressionsInOrderBy()
+.
+supportsExtendedSQLGrammar()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsExtendedSQLGrammar()
+.
+supportsFullOuterJoins()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsFullOuterJoins()
+.
+supportsGetGeneratedKeys()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsGetGeneratedKeys()
+.
+supportsGroupBy()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsGroupBy()
+.
+supportsGroupByBeyondSelect()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsGroupByBeyondSelect()
+.
+supportsGroupByUnrelated()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsGroupByUnrelated()
+.
+supportsIntegrityEnhancementFacility()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsIntegrityEnhancementFacility()
+.
+supportsLikeEscapeClause()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsLikeEscapeClause()
+.
+supportsLimitedOuterJoins()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsLimitedOuterJoins()
+.
+supportsMinimumSQLGrammar()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMinimumSQLGrammar()
+.
+supportsMixedCaseIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMixedCaseIdentifiers()
+.
+supportsMixedCaseQuotedIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMixedCaseQuotedIdentifiers()
+.
+supportsMultipleOpenResults()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMultipleOpenResults()
+.
+supportsMultipleResultSets()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMultipleResultSets()
+.
+supportsMultipleTransactions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMultipleTransactions()
+.
+supportsNamedParameters()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsNamedParameters()
+.
+supportsNonNullableColumns()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsNonNullableColumns()
+.
+supportsOpenCursorsAcrossCommit()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOpenCursorsAcrossCommit()
+.
+supportsOpenCursorsAcrossRollback()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOpenCursorsAcrossRollback()
+.
+supportsOpenStatementsAcrossCommit()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOpenStatementsAcrossCommit()
+.
+supportsOpenStatementsAcrossRollback()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOpenStatementsAcrossRollback()
+.
+supportsOrderByUnrelated()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOrderByUnrelated()
+.
+supportsOuterJoins()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOuterJoins()
+.
+supportsPositionedDelete()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsPositionedDelete()
+.
+supportsPositionedUpdate()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsPositionedUpdate()
+.
+supportsResultSetConcurrency(type, concurrency)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsResultSetConcurrency(int, int)
+.
+supportsResultSetHoldability(holdability)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsResultSetHoldability(int)
+.
+supportsResultSetType(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsResultSetType(int)
+.
+supportsSavepoints()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSavepoints()
+.
+supportsSchemasInDataManipulation()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInDataManipulation()
+.
+supportsSchemasInIndexDefinitions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInIndexDefinitions()
+.
+supportsSchemasInPrivilegeDefinitions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInPrivilegeDefinitions()
+.
+supportsSchemasInProcedureCalls()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInProcedureCalls()
+.
+supportsSchemasInTableDefinitions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInTableDefinitions()
+.
+supportsSelectForUpdate()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSelectForUpdate()
+.
+supportsStatementPooling()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsStatementPooling()
+.
+supportsStoredFunctionsUsingCallSyntax()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsStoredFunctionsUsingCallSyntax()
+.
+supportsStoredProcedures()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsStoredProcedures()
+.
+supportsSubqueriesInComparisons()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSubqueriesInComparisons()
+.
+supportsSubqueriesInExists()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSubqueriesInExists()
+.
+supportsSubqueriesInIns()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSubqueriesInIns()
+.
+supportsSubqueriesInQuantifieds()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSubqueriesInQuantifieds()
+.
+supportsTableCorrelationNames()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsTableCorrelationNames()
+.
+supportsTransactionIsolationLevel(level)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsTransactionIsolationLevel(int)
+.
+supportsTransactions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsTransactions()
+.
+supportsUnion()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsUnion()
+.
+supportsUnionAll()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsUnionAll()
+.
+updatesAreDetected(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#updatesAreDetected(int)
+.
+usesLocalFilePerTable()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#usesLocalFilePerTable()
+.
+usesLocalFiles()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#usesLocalFiles()
+.
+Detailed documentation
+allProceduresAreCallable()
+For documentation of this method, see
+java.sql.DatabaseMetaData#allProceduresAreCallable()
+.
+Return
+Boolean
+—
+true
+if the user can call all of the procedures returned by
+getProcedures(catalog, schemaPattern, procedureNamePattern)
+;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+allTablesAreSelectable()
+For documentation of this method, see
+java.sql.DatabaseMetaData#allTablesAreSelectable()
+.
+Return
+Boolean
+—
+true
+if the user can call all of the tables returned by
+getTables(catalog, schemaPattern, tableNamePattern, types)
+in a
+SELECT
+statement;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+autoCommitFailureClosesAllResultSets()
+For documentation of this method, see
+java.sql.DatabaseMetaData#autoCommitFailureClosesAllResultSets()
+.
+Return
+Boolean
+—
+true
+if, when
+autoCommit
+is
+true
+, a SQL exception indicates
+    that all open result sets are closed, even if holdable. Returns
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+dataDefinitionCausesTransactionCommit()
+For documentation of this method, see
+java.sql.DatabaseMetaData#dataDefinitionCausesTransactionCommit()
+.
+Return
+Boolean
+—
+true
+if a data definition statement within a transaction forces the transaction
+    to commit;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+dataDefinitionIgnoredInTransactions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#dataDefinitionIgnoredInTransactions()
+.
+Return
+Boolean
+—
+true
+if the database ignores a data definition statement within a transaction;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+deletesAreDetected(type)
+For documentation of this method, see
+java.sql.DatabaseMetaData#deletesAreDetected(int)
+.
+Parameters
+Name
+Type
+Description
+type
+Integer
+The result set type, which is
+Jdbc.ResultSet.TYPE_FORWARD_ONLY
+,
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+, or
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+.
+Return
+Boolean
+—
+true
+if for the specified result set type a visible row delete is detected by
+    calls to
+JdbcResultSet.rowDeleted()
+. If
+false
+, the deleted rows are removed
+    from the result set.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+doesMaxRowSizeIncludeBlobs()
+For documentation of this method, see
+java.sql.DatabaseMetaData#doesMaxRowSizeIncludeBlobs()
+.
+Return
+Boolean
+—
+true
+if SQL data types
+LONGVARCHAR
+and
+LONGVARBINARY
+are
+    included in the size returned by
+getMaxRowSize()
+;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getAttributes(catalog, schemaPattern, typeNamePattern, attributeNamePattern)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getAttributes(String, String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schemaPattern
+String
+The schema name pattern to filter the search by, as it appears in the
+    database. Passing an empty string retrieves those procedures without a schema. Passing
+null
+incidates the schema name isn't used to narrow the search.
+typeNamePattern
+String
+The user-defined type name pattern; it must match the type name as it is
+    stored in the database.
+attributeNamePattern
+String
+The attribute name pattern; it must match the attribute name as it
+    is declared in the database.
+Return
+JdbcResultSet
+— A result set containing descriptions the attributes for a specified user-defined type
+    available in the specified schema and catalog. Each row provides information about a
+    specific attribute, ordered by
+TYPE_CAT
+,
+TYPE_SCHEM
+,
+TYPE_NAME
+, and
+ORDINAL_POSITION
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getBestRowIdentifier(catalog, schema, table, scope, nullable)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getBestRowIdentifier(String, String, String, int, boolean)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schema
+String
+The schema name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a schema. Passing
+null
+incidates
+    the schema name isn't used to narrow the search.
+table
+String
+The table name. It must match the table name as it is stored in the database.
+scope
+Integer
+The scope of interest, using the same values as present in the
+SCOPE
+column description column.
+nullable
+Boolean
+If
+true
+, include columns that are nullable; otherwise do not.
+Return
+JdbcResultSet
+— A result set containing the column descriptions that uniquely identify a row (one
+    column description per row in the result set, ordered by
+SCOPE
+).
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getCatalogSeparator()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getCatalogSeparator()
+.
+Return
+String
+— The separator between a catalog and table name used by this database.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getCatalogTerm()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getCatalogTerm()
+.
+Return
+String
+— The database vendor's preferred term for 'catalog'.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getCatalogs()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getCatalogs()
+.
+Return
+JdbcResultSet
+— A result set containing the catalog names, one per row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getClientInfoProperties()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getClientInfoProperties()
+.
+Return
+JdbcResultSet
+— A result set containing client info properties the driver supports, ordered by
+NAME
+, one per row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getColumnPrivileges(catalog, schema, table, columnNamePattern)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getColumnPrivileges(String, String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schema
+String
+The name of the schema to filter the search by, as it appears in the database.
+    Passing an empty string retrieves those procedures without a schema. Passing
+null
+incidates the schema name isn't used to narrow the search.
+table
+String
+The table name. It must match the table name as it is stored in the database.
+columnNamePattern
+String
+The column name pattern to filter the search by. It must match the
+    column name as it is stored in the database.
+Return
+JdbcResultSet
+— A result set containing the column privilege descriptions, one per row, ordered by
+COLUMN_NAME
+and
+PRIVILEGE
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getColumns(catalog, schemaPattern, tableNamePattern, columnNamePattern)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getColumns(String, String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schemaPattern
+String
+The schema name pattern to filter the search by, as it appears in the
+    database. Passing an empty string retrieves those procedures without a schema. Passing
+null
+incidates the schema name isn't used to narrow the search.
+tableNamePattern
+String
+The table name pattern to filter the search by. It must match the table
+    name as it is stored in the database.
+columnNamePattern
+String
+The column name pattern to filter the search by. It must match the
+    column name as it is stored in the database.
+Return
+JdbcResultSet
+— A result set containing the column descriptions, one per row, ordered according to
+TABLE_CAT
+,
+TABLE_SCHEM
+,
+TABLE_NAME
+, and
+ORDINAL_POSITION
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getConnection()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getConnection()
+.
+Return
+JdbcConnection
+— The connection that produced this metadata.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getCrossReference(parentCatalog, parentSchema, parentTable, foreignCatalog, foreignSchema, foreignTable)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getCrossReference(String, String, String,
+     String, String, String)
+.
+Parameters
+Name
+Type
+Description
+parentCatalog
+String
+A parent catalog name as it appears in the database. Passing an empty
+    string retrieves those procedures without a catalog. Passing
+null
+incidates the
+    catalog name isn't used in the selection criteria.
+parentSchema
+String
+A parent schema name as it appears in the database. Passing an empty string
+    retrieves those procedures without a schema. Passing
+null
+incidates the schema name
+    isn't used in the selection criteria.
+parentTable
+String
+The name of the parent table that exports the key. It must match the table
+    name as it is stored in the database.
+foreignCatalog
+String
+A foreign catalog name as it appears in the database. Passing an empty
+    string retrieves those procedures without a catalog. Passing
+null
+incidates the
+    catalog name isn't used in the selection criteria.
+foreignSchema
+String
+A foreign schema name as it appears in the database. Passing an empty
+    string retrieves those procedures without a schema. Passing
+null
+incidates the
+    schema name isn't used in the selection criteria.
+foreignTable
+String
+The name of the foreign table that exports the key. It must match the table
+    name as it is stored in the database.
+Return
+JdbcResultSet
+— An result set containing the foreign key column descriptions from the specified foreign
+    key table that reference the primary key or the columns representing a unique constraint of
+    the parent table. One column description is provided in each row of the result set, and
+    they are ordered by
+FKTABLE_CAT
+,
+FKTABLE_SCHEM
+,
+FKTABLE_NAME
+, and
+KEY_SEQ
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDatabaseMajorVersion()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDatabaseMajorVersion()
+.
+Return
+Integer
+— The major version number of the underlying database.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDatabaseMinorVersion()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDatabaseMinorVersion()
+.
+Return
+Integer
+— The minor version number of the underlying database.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDatabaseProductName()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDatabaseProductName()
+.
+Return
+String
+— The name of this database product.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDatabaseProductVersion()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDatabaseProductVersion()
+.
+Return
+String
+— The version number of this database product.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDefaultTransactionIsolation()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDefaultTransactionIsolation()
+.
+Return
+Integer
+— The database's default transaction isolation level, which is one of:
+Jdbc.Connection.TRANSACTION_READ_UNCOMMITTED
+,
+Jdbc.Connection.TRANSACTION_READ_COMMITTED
+,
+Jdbc.Connection.TRANSACTION_REPEATABLE_READ
+,
+Jdbc.Connection.TRANSACTION_SERIALIZABLE
+, or
+Jdbc.Connection.TRANSACTION_NONE
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDriverMajorVersion()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDriverMajorVersion()
+.
+Return
+Integer
+— The JDBC driver's major version number.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDriverMinorVersion()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDriverMinorVersion()
+.
+Return
+Integer
+— The JDBC driver's minor version number.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDriverName()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDriverName()
+.
+Return
+String
+— The name of this JDBC driver.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getDriverVersion()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDriverVersion()
+.
+Return
+String
+— The version number of this JDBC driver.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getExportedKeys(catalog, schema, table)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getImportedKeys(String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schema
+String
+The schema name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a schema. Passing
+null
+incidates
+    the schema name isn't used to narrow the search.
+table
+String
+The table name. It must match the table name as it is stored in the database.
+Return
+JdbcResultSet
+— An result set containing the foreign key column descriptions for the primary key
+    columns exported by the table. One column description is provided in each row of the result
+    set, and they are ordered by
+FKTABLE_CAT
+,
+FKTABLE_SCHEM
+,
+FKTABLE_NAME
+, and
+KEY_SEQ
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getExtraNameCharacters()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getExtraNameCharacters()
+.
+Return
+String
+— The extra characters that are avaiable for use in unquoted identifier names in addition
+    to a-z, A-Z, 0-9, and _.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getFunctionColumns(catalog, schemaPattern, functionNamePattern, columnNamePattern)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getFunctionColumns(String, String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schemaPattern
+String
+The schema name pattern to filter the search by, as it appears in the
+    database. Passing an empty string retrieves those procedures without a schema. Passing
+null
+incidates the schema name isn't used to narrow the search.
+functionNamePattern
+String
+The function pattern, which match the function name as it is stored
+    in the database.
+columnNamePattern
+String
+The parameter name pattern, which must match the parameter or column
+    name as it is stored in the database.
+Return
+JdbcResultSet
+— A result set containing the descriptions of system and user function parameters
+    available in the given catalog. Each row contains one function description, ordered
+    according to
+FUNCTION_CAT
+,
+FUNCTION_SCHEM
+,
+FUNCTION_NAME
+, and
+SPECIFIC_ NAME
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getFunctions(catalog, schemaPattern, functionNamePattern)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getFunctions(String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schemaPattern
+String
+The schema name pattern to filter the search by, as it appears in the
+    database. Passing an empty string retrieves those procedures without a schema. Passing
+null
+incidates the schema name isn't used to narrow the search.
+functionNamePattern
+String
+The function pattern, which must match the function name as it is
+    stored in the database.
+Return
+JdbcResultSet
+— A result set containing descriptions of the system and user functions available in the
+    given catalog. Each row contains one function description, ordered according to
+FUNCTION_CAT
+,
+FUNCTION_SCHEM
+,
+FUNCTION_NAME
+, and
+SPECIFIC_ NAME
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getIdentifierQuoteString()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getIdentifierQuoteString()
+.
+Return
+String
+— The string used to quote SQL identifiers. Defaults to a space (" ") if identifier
+    quoting isn't supported.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getImportedKeys(catalog, schema, table)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getImportedKeys(String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schema
+String
+The schema name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a schema. Passing
+null
+incidates
+    the schema name isn't used to narrow the search.
+table
+String
+The table name. It must match the table name as it is stored in the database.
+Return
+JdbcResultSet
+— An result set containing the column descriptions for the primary key columns referenced
+    by the given table's foreign key columns (those imported by a table). One column
+    description is provided in each row of the result set, and they are ordered by
+PKTABLE_CAT
+,
+PKTABLE_SCHEM
+,
+PKTABLE_NAME
+, and
+KEY_SEQ
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getIndexInfo(catalog, schema, table, unique, approximate)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getIndexInfo(String, String, String, boolean, boolean)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schema
+String
+The schema name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a schema. Passing
+null
+incidates
+    the schema name isn't used to narrow the search.
+table
+String
+The table name. It must match the table name as it is stored in the database.
+unique
+Boolean
+If
+true
+, the method only return indices for unique values; otherwise it
+    returns indices whether the values are unique or not.
+approximate
+Boolean
+If
+true
+, the result is allowed to reflect approximate or out-of-data
+    values; otherwise result accuracy is requested.
+Return
+JdbcResultSet
+— An result set containing the index and statistic column descriptions for the specified
+    table. One column description is provided in each row of the result set, and they are
+    ordered by
+NON_UNIQUE
+,
+TYPE
+,
+INDEX_NAME
+, and
+ORDINAL_POSITION
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getJDBCMajorVersion()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getJDBCMajorVersion()
+.
+Return
+Integer
+— The major JDBC version number for this driver.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getJDBCMinorVersion()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getJDBCMinorVersion()
+.
+Return
+Integer
+— The minor JDBC version number for this driver.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxBinaryLiteralLength()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxBinaryLiteralLength()
+.
+Return
+Integer
+— The maximum number of hex characters this database allows in an inline binary literal.
+    A response of 0 indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxCatalogNameLength()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxCatalogNameLength()
+.
+Return
+Integer
+— The maximum number of characters this database allows in a catalog name. A response of
+    0 indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxCharLiteralLength()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxCharLiteralLength()
+.
+Return
+Integer
+— The maximum number of characters this database allows in a character literal. A
+    response of 0 indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxColumnNameLength()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnNameLength()
+.
+Return
+Integer
+— The maximum number of characters this database allows in a column name. A response of 0
+    indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxColumnsInGroupBy()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInGroupBy()
+.
+Return
+Integer
+— The maximum number of columns this database allows in a
+GROUP BY
+clause. A
+    response of 0 indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxColumnsInIndex()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInIndex()
+.
+Return
+Integer
+— The maximum number of columns this database allows in an index. A response of 0
+    indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxColumnsInOrderBy()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInOrderBy()
+.
+Return
+Integer
+— The maximum number of columns this database allows in an
+ORDER BY
+clause. A
+    response of 0 indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxColumnsInSelect()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInSelect()
+.
+Return
+Integer
+— The maximum number of columns this database allows in an
+SELECT
+list. A
+    response of 0 indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxColumnsInTable()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInTable()
+.
+Return
+Integer
+— The maximum number of columns this database allows in a table. A response of 0
+    indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxConnections()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxConnections()
+.
+Return
+Integer
+— The maximum number of concurrent connections to this database. A response of 0
+    indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxCursorNameLength()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxCursorNameLength()
+.
+Return
+Integer
+— The maximum number of characters that this database allows in a cursor name. A response
+    of 0 indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxIndexLength()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxIndexLength()
+.
+Return
+Integer
+— The maximum number of bytes this database allows for an index, including all its parts.
+    A response of 0 indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxProcedureNameLength()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxProcedureNameLength()
+.
+Return
+Integer
+— The maximum number of characters this database allows in a procedure name. A response
+    of 0 indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxRowSize()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxRowSize()
+.
+Return
+Integer
+— The maximum number of bytes this database allows in a single row. A response of 0
+    indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxSchemaNameLength()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxSchemaNameLength()
+.
+Return
+Integer
+— The maximum number of characters this database allows in a schema name. A response of 0
+    indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxStatementLength()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxStatementLength()
+.
+Return
+Integer
+— The maximum number of characters this database allows in an SQL statement. A response
+    of 0 indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxStatements()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxStatements()
+.
+Return
+Integer
+— The maximum number of active statements to this database that can be open
+    simultaneously. A response of 0 indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxTableNameLength()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxTableNameLength()
+.
+Return
+Integer
+— The maximum number of characters this database allows in a table name. A response of 0
+    indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxTablesInSelect()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxTablesInSelect()
+.
+Return
+Integer
+— The maximum number of tables this database allows in a
+SELECT
+statement. A
+    response of 0 indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getMaxUserNameLength()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxUserNameLength()
+.
+Return
+Integer
+— The maximum number of characters this database allows in a username. A response of 0
+    indicates there is no known limit.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getNumericFunctions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getNumericFunctions()
+.
+Return
+String
+— The comma-separated list of math functions available with this database. These are the
+    Open/Open CLI math function names used in the JDBC function escape clause.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getPrimaryKeys(catalog, schema, table)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getPrimaryKeys(String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schema
+String
+The schema name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a schema. Passing
+null
+incidates
+    the schema name isn't used to narrow the search.
+table
+String
+The table name. It must match the table name as it is stored in the database.
+Return
+JdbcResultSet
+— An result set containing the column descriptions for the primary key columns, one per
+    row, ordered by
+COLUMN_NAME
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getProcedureColumns(catalog, schemaPattern, procedureNamePattern, columnNamePattern)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getProcedureColumns(String, String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schemaPattern
+String
+The schema name pattern to filter the search by, as it appears in the
+    database. Passing an empty string retrieves those procedures without a schema. Passing
+null
+incidates the schema name isn't used to narrow the search.
+procedureNamePattern
+String
+The procedure name pattern to filter the search by. It must match
+    the procedure name as it is stored in the database.
+columnNamePattern
+String
+The column name pattern to filter the search by. It must match the
+    column name as it is stored in the database.
+Return
+JdbcResultSet
+— A result set containing the procedure and column descriptions, one per row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getProcedureTerm()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getProcedureTerm()
+.
+Return
+String
+— The database vendor's preferred term for 'procedure'.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getProcedures(catalog, schemaPattern, procedureNamePattern)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getProcedures(String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schemaPattern
+String
+The schema name pattern to filter the search by, as it appears in the
+    database. Passing an empty string retrieves those procedures without a schema. Passing
+null
+incidates the schema name isn't used to narrow the search.
+procedureNamePattern
+String
+The procedure name pattern to filter the search by. It must match
+    the procedure name as it is stored in the database.
+Return
+JdbcResultSet
+— A result set containing the procedure descriptions, one per row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getResultSetHoldability()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getResultSetHoldability()
+.
+Return
+Integer
+— The database default holdability; one of
+Jdbc.ResultSet.HOLD_CURSORS_OVER_COMMIT
+or
+Jdbc.ResultSet.CLOSE_CURSORS_AT_COMMIT
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getRowIdLifetime()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getRowIdLifetime()
+.
+Return
+Integer
+— The status indicatig the lifetime of a
+ROWID
+, which is one of
+Jdbc.RowIdLifetime.ROWID_UNSUPPORTED
+,
+Jdbc.RowIdLifetime.ROWID_VALID_OTHER
+,
+Jdbc.RowIdLifetime.ROWID_VALID_SESSION
+,
+Jdbc.RowIdLifetime.ROWID_VALID_TRANSACTION
+, or
+Jdbc.RowIdLifetime.ROWID_VALID_FOREVER
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getSQLKeywords()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSQLKeywords()
+.
+Return
+String
+— The comma-separated list of all this database's SQL keywords that aren't also SQL:2003
+    keywords.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getSQLStateType()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSQLStateType()
+.
+Return
+Integer
+— The type of
+SQLSTATE
+, which is either
+sqlStateXOpen
+or
+sqlStateSQL
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getSchemaTerm()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSchemaTerm()
+.
+Return
+String
+— The database vendor's preferred term for 'schema'.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getSchemas()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSchemas()
+.
+Return
+JdbcResultSet
+— A result set containing the schema descriptions, one per row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getSchemas(catalog, schemaPattern)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSchemas()
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schemaPattern
+String
+The schema name pattern to filter the search by, as it appears in the
+    database. Passing an empty string retrieves those procedures without a schema. Passing
+null
+incidates the schema name isn't used to narrow the search.
+Return
+JdbcResultSet
+— A result set containing scheme descriptions available in this database, ordered by
+TABLE_CATALOG
+and
+TABLE_SCHEM
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getSearchStringEscape()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSearchStringEscape()
+.
+Return
+String
+— The string that is used to escape wildcard characters such as '_' or '%'.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getStringFunctions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getStringFunctions()
+.
+Return
+String
+— The comma-separated list of string functions available with this database. These are
+    the Open Group CLI string function names used in the JDBC function escape clause.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getSuperTables(catalog, schemaPattern, tableNamePattern)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSuperTables(String, String,String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name as it appears in the database. Passing an empty string
+    retrieves those procedures without a catalog. Passing
+null
+incidates the catalog
+    name isn't used in the selection criteria.
+schemaPattern
+String
+The schema name pattern to filter the search by, as it appears in the
+    database. Passing an empty string retrieves those procedures without a schema.
+tableNamePattern
+String
+The table name pattern; may be a fully qualified name.
+Return
+JdbcResultSet
+— A result set containing descriptions of the table hierarchies defined in a particular
+    schema in this database. Each row provides information about a specific table type. Tables
+    without supers aren't listed.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getSuperTypes(catalog, schemaPattern, typeNamePattern)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSuperTypes(String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name as it appears in the database. Passing an empty string
+    retrieves those procedures without a catalog. Passing
+null
+incidates the catalog
+    name isn't used in the selection criteria.
+schemaPattern
+String
+The schema name pattern to filter the search by, as it appears in the
+    database. Passing an empty string retrieves those procedures without a schema.
+typeNamePattern
+String
+The user-defined type name pattern; may be a fully qualified name.
+Return
+JdbcResultSet
+— A result set containing descriptions of the user-defined type hierarchies defined in a
+    particular schema in this database. Each row provides information about a specific
+    user-defined type. Types without supers aren't listed.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getSystemFunctions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSystemFunctions()
+.
+Return
+String
+— The comma-separated list of system functions available with this database. These are
+    the Open Group CLI system function names used in the JDBC function escape clause.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTablePrivileges(catalog, schemaPattern, tableNamePattern)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTablePrivileges(String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schemaPattern
+String
+The schema name pattern to filter the search by, as it appears in the
+    database. Passing an empty string retrieves those procedures without a schema. Passing
+null
+incidates the schema name isn't used to narrow the search.
+tableNamePattern
+String
+The table name pattern to filter the search by. It must match the table
+    name as it is stored in the database.
+Return
+JdbcResultSet
+— A result set containing the table privilege descriptions, one per row, ordered by
+TABLE_CAT
+,
+TABLE_SCHEM
+,
+TABLE_NAME
+, and
+PRIVILEGE
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTableTypes()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTableTypes()
+.
+Return
+JdbcResultSet
+— A result set containing the table types, one per row.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTables(catalog, schemaPattern, tableNamePattern, types)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTables(String, String, String, String[])
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schemaPattern
+String
+The schema name pattern to filter the search by, as it appears in the
+    database. Passing an empty string retrieves those procedures without a schema. Passing
+null
+incidates the schema name isn't used to narrow the search.
+tableNamePattern
+String
+The table name pattern to filter the search by. It must match the table
+    name as it is stored in the database.
+types
+String[]
+A list of table types to return, each of which must be on the list that
+getTableTypes()
+returns. Passing
+null
+indictates that all table types are
+    returned.
+Return
+JdbcResultSet
+— A result set containing the table descriptions, one per row, ordered according to
+TABLE_TYPE
+,
+TABLE_CAT
+,
+TABLE_SCHEM
+, and
+TABLE_NAME
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTimeDateFunctions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTimeDateFunctions()
+.
+Return
+String
+— The comma-separated list of time and date functions available with this database.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getTypeInfo()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTypeInfo()
+.
+Return
+JdbcResultSet
+— An result set containing the descriptions of data types supported by this database. One
+    SQL type description is provided in each row of the result set, and they are ordered by
+DATA_TYPE
+and then by how closely the data type maps to the corresponding JDBC SQL
+    type.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getUDTs(catalog, schemaPattern, typeNamePattern, types)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getUDTs(String, String, String, int[])
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schemaPattern
+String
+The schema name pattern to filter the search by, as it appears in the
+    database. Passing an empty string retrieves those procedures without a schema. Passing
+null
+incidates the schema name isn't used to narrow the search.
+typeNamePattern
+String
+The type name pattern to filter the search by; may be a fully qualified
+    name.
+types
+Integer[]
+A list of user-defined types (
+JAVA_OBJECT
+,
+STRUCT
+, or
+DISTINCT
+) to include. Passing
+null
+indictates that all types are returned.
+Return
+JdbcResultSet
+— A result set containing the user-defined type (UDT) descriptions, one per row, ordered
+    according to
+DATA_TYPE
+,
+TYPE_CAT
+,
+TYPE_SCHEM
+, and
+TYPE_NAME
+.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getURL()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getURL()
+.
+Return
+String
+— The URL for this database management system, or
+null
+if isn't generated.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getUserName()
+For documentation of this method, see
+java.sql.DatabaseMetaData#getUserName()
+.
+Return
+String
+— The username as known to this database.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+getVersionColumns(catalog, schema, table)
+For documentation of this method, see
+java.sql.DatabaseMetaData#getVersionColumns(String, String, String)
+.
+Parameters
+Name
+Type
+Description
+catalog
+String
+The catalog name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a catalog. Passing
+null
+incidates the catalog name isn't used to narrow the search.
+schema
+String
+The schema name to filter the search by, as it appears in the database. Passing
+    an empty string retrieves those procedures without a schema. Passing
+null
+incidates
+    the schema name isn't used to narrow the search.
+table
+String
+The table name. It must match the table name as it is stored in the database.
+Return
+JdbcResultSet
+— An unordered result set containing the column descriptions that are updated when any
+    value in a row is updated (one column description per row in the result set).
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+insertsAreDetected(type)
+For documentation of this method, see
+java.sql.DatabaseMetaData#insertsAreDetected(int)
+.
+Parameters
+Name
+Type
+Description
+type
+Integer
+The result set type, which is
+Jdbc.ResultSet.TYPE_FORWARD_ONLY
+,
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+, or
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+.
+Return
+Boolean
+—
+true
+if for the specified result set type a visible row insert is detected by
+    calls to
+JdbcResultSet.rowInserted()
+;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+isCatalogAtStart()
+For documentation of this method, see
+java.sql.DatabaseMetaData#isCatalogAtStart()
+.
+Return
+Boolean
+—
+true
+if a catalog appears at the start of a fully-qualified table name;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+isReadOnly()
+For documentation of this method, see
+java.sql.DatabaseMetaData#isReadOnly()
+.
+Return
+Boolean
+—
+true
+if the database is read-only;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+locatorsUpdateCopy()
+For documentation of this method, see
+java.sql.DatabaseMetaData#locatorsUpdateCopy()
+.
+Return
+Boolean
+—
+true
+if updates made to a Large Object (LOB) are made to a copy of th LOB;
+false
+if updates are made directly to the LOB.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+nullPlusNonNullIsNull()
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullPlusNonNullIsNull()
+.
+Return
+Boolean
+—
+true
+if concatenations of
+NULL
+and non-
+NULL
+values result in a
+NULL
+;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+nullsAreSortedAtEnd()
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullsAreSortedAtEnd()
+.
+Return
+Boolean
+—
+true
+if
+NULL
+values are sorted to the end regardless of sort order
+    (ascending or descending). Returns
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+nullsAreSortedAtStart()
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullsAreSortedAtStart()
+.
+Return
+Boolean
+—
+true
+if
+NULL
+values are sorted to the start regardless of sort order
+    (ascending or descending). Returns
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+nullsAreSortedHigh()
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullsAreSortedHigh()
+.
+Return
+Boolean
+—
+true
+if the
+NULL
+values are sorted high, meaning they are considered to
+    have a value higher than others in the domain when sorting. Returns
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+nullsAreSortedLow()
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullsAreSortedLow()
+.
+Return
+Boolean
+—
+true
+if the
+NULL
+values are sorted low, meaning they are considered to
+    have a value lower than others in the domain when sorting. Returns
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+othersDeletesAreVisible(type)
+For documentation of this method, see
+java.sql.DatabaseMetaData#othersDeletesAreVisible(int)
+.
+Parameters
+Name
+Type
+Description
+type
+Integer
+The result set type, which is
+Jdbc.ResultSet.TYPE_FORWARD_ONLY
+,
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+, or
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+.
+Return
+Boolean
+—
+true
+if for the given result set type the deletes made by others are visible;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+othersInsertsAreVisible(type)
+For documentation of this method, see
+java.sql.DatabaseMetaData#othersInsertsAreVisible(int)
+.
+Parameters
+Name
+Type
+Description
+type
+Integer
+The result set type, which is
+Jdbc.ResultSet.TYPE_FORWARD_ONLY
+,
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+, or
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+.
+Return
+Boolean
+—
+true
+if for the given result set type the inserts made by others are visible;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+othersUpdatesAreVisible(type)
+For documentation of this method, see
+java.sql.DatabaseMetaData#othersUpdatesAreVisible(int)
+.
+Parameters
+Name
+Type
+Description
+type
+Integer
+The result set type, which is
+Jdbc.ResultSet.TYPE_FORWARD_ONLY
+,
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+, or
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+.
+Return
+Boolean
+—
+true
+if for the given result set type the updates made by others are visible;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+ownDeletesAreVisible(type)
+For documentation of this method, see
+java.sql.DatabaseMetaData#ownDeletesAreVisible(int)
+.
+Parameters
+Name
+Type
+Description
+type
+Integer
+The result set type, which is
+Jdbc.ResultSet.TYPE_FORWARD_ONLY
+,
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+, or
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+.
+Return
+Boolean
+—
+true
+if for the given result set type the set's own deletes are visible;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+ownInsertsAreVisible(type)
+For documentation of this method, see
+java.sql.DatabaseMetaData#ownInsertsAreVisible(int)
+.
+Parameters
+Name
+Type
+Description
+type
+Integer
+The result set type, which is
+Jdbc.ResultSet.TYPE_FORWARD_ONLY
+,
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+, or
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+.
+Return
+Boolean
+—
+true
+if for the given result set type the set's own inserts are visible;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+ownUpdatesAreVisible(type)
+For documentation of this method, see
+java.sql.DatabaseMetaData#ownUpdatesAreVisible(int)
+.
+Parameters
+Name
+Type
+Description
+type
+Integer
+The result set type, which is
+Jdbc.ResultSet.TYPE_FORWARD_ONLY
+,
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+, or
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+.
+Return
+Boolean
+—
+true
+if for the given result set type the set's own updates are visible;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+storesLowerCaseIdentifiers()
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesLowerCaseIdentifiers()
+.
+Return
+Boolean
+—
+true
+if the database treats mixed case unquoted SQL identifiers as
+    case-insensitive and stores them in lowercase;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+storesLowerCaseQuotedIdentifiers()
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesLowerCaseQuotedIdentifiers()
+.
+Return
+Boolean
+—
+true
+if the database treats mixed case quoted SQL identifiers as
+    case-insensitive and stores them in lowercase;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+storesMixedCaseIdentifiers()
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesMixedCaseIdentifiers()
+.
+Return
+Boolean
+—
+true
+if the database treats mixed case unquoted SQL identifiers as
+    case-insensitive and stores them in mixed case;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+storesMixedCaseQuotedIdentifiers()
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesMixedCaseQuotedIdentifiers()
+.
+Return
+Boolean
+—
+true
+if the database treats mixed case quoted SQL identifiers as
+    case-insensitive and stores them in mixed case;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+storesUpperCaseIdentifiers()
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesUpperCaseIdentifiers()
+.
+Return
+Boolean
+—
+true
+if the database treats mixed case unquoted SQL identifiers as
+    case-insensitive and stores them in uppercase;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+storesUpperCaseQuotedIdentifiers()
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesUpperCaseQuotedIdentifiers()
+.
+Return
+Boolean
+—
+true
+if the database treats mixed case quoted SQL identifiers as
+    case-insensitive and stores them in uppercase;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsANSI92EntryLevelSQL()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsANSI92EntryLevelSQL()
+.
+Return
+Boolean
+—
+true
+if this database supports the ANSI92 entry level SQL grammar;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsANSI92FullSQL()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsANSI92FullSQL()
+.
+Return
+Boolean
+—
+true
+if this database supports the ANSI92 full level SQL grammar;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsANSI92IntermediateSQL()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsANSI92IntermediateSQL()
+.
+Return
+Boolean
+—
+true
+if this database supports the ANSI92 intermediate level SQL grammar;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsAlterTableWithAddColumn()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsAlterTableWithAddColumn()
+.
+Return
+Boolean
+—
+true
+if the database supports
+ALTER TABLE
+with add column;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsAlterTableWithDropColumn()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsAlterTableWithDropColumn()
+.
+Return
+Boolean
+—
+true
+if the database supports
+ALTER TABLE
+with drop column;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsBatchUpdates()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsBatchUpdates()
+.
+Return
+Boolean
+—
+true
+if the database supports batch updates;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsCatalogsInDataManipulation()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInDataManipulation()
+.
+Return
+Boolean
+—
+true
+if a data manipulation statement can include a catalog name;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsCatalogsInIndexDefinitions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInIndexDefinitions()
+.
+Return
+Boolean
+—
+true
+if an index definition statement can include a catalog name;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsCatalogsInPrivilegeDefinitions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInPrivilegeDefinitions()
+.
+Return
+Boolean
+—
+true
+if a privilege definition statement can include a catalog name;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsCatalogsInProcedureCalls()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInProcedureCalls()
+.
+Return
+Boolean
+—
+true
+if a procedure call statement can include a catalog name;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsCatalogsInTableDefinitions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInTableDefinitions()
+.
+Return
+Boolean
+—
+true
+if a table definition statement can include a catalog name;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsColumnAliasing()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsColumnAliasing()
+.
+Return
+Boolean
+—
+true
+if the database supports column aliasing;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsConvert()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsConvert()
+.
+Return
+Boolean
+—
+true
+if this database supports the JDBC scalar function
+CONVERT
+for the
+    conversion of one
+JDBC type
+to
+    another;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsConvert(fromType, toType)
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsConvert(int, int)
+.
+Parameters
+Name
+Type
+Description
+fromType
+Integer
+The
+type
+to convert from.
+toType
+Integer
+The
+type
+to convert to.
+Return
+Boolean
+—
+true
+if this database supports the JDBC scalar function
+CONVERT
+for the
+    conversion of the specified JDBC types;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsCoreSQLGrammar()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCoreSQLGrammar()
+.
+Return
+Boolean
+—
+true
+if this database supports the ODBC Core SQL grammar;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsCorrelatedSubqueries()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCorrelatedSubqueries()
+.
+Return
+Boolean
+—
+true
+if this database supports correlated subqueries;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsDataDefinitionAndDataManipulationTransactions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsDataDefinitionAndDataManipulationTransactions()
+.
+Return
+Boolean
+—
+true
+if this database supports both data definition and data manipulation
+    statements within a transaction;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsDataManipulationTransactionsOnly()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsDataManipulationTransactionsOnly()
+.
+Return
+Boolean
+—
+true
+if this database supports data manipulation statements within a
+    transaction;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsDifferentTableCorrelationNames()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsDifferentTableCorrelationNames()
+.
+Return
+Boolean
+—
+true
+if table correlation names are supported and are restricted to be
+    different frm the names of the tables in the database;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsExpressionsInOrderBy()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsExpressionsInOrderBy()
+.
+Return
+Boolean
+—
+true
+if this database supports expressions in
+ORDER BY
+lists;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsExtendedSQLGrammar()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsExtendedSQLGrammar()
+.
+Return
+Boolean
+—
+true
+if this database supports the ODBC Extended SQL grammar;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsFullOuterJoins()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsFullOuterJoins()
+.
+Return
+Boolean
+—
+true
+if this database supports full nested outer joins;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsGetGeneratedKeys()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsGetGeneratedKeys()
+.
+Return
+Boolean
+—
+true
+if auto-generated keys can be retrieved after a statement is executed;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsGroupBy()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsGroupBy()
+.
+Return
+Boolean
+—
+true
+if this database supports some form of
+GROUP BY
+clause;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsGroupByBeyondSelect()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsGroupByBeyondSelect()
+.
+Return
+Boolean
+—
+true
+if this database supports using columns that aren't in the
+SELECT
+statement in a
+GROUP BY
+clause, provided that all the columns in the
+SELECT
+statement are included in the
+GROUP BY
+clause. Returns
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsGroupByUnrelated()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsGroupByUnrelated()
+.
+Return
+Boolean
+—
+true
+if this database supports using a column that isn't in the
+SELECT
+statement in a
+GROUP BY
+clause;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsIntegrityEnhancementFacility()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsIntegrityEnhancementFacility()
+.
+Return
+Boolean
+—
+true
+if this database supports the SQL Integrity Enhancement Facility;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsLikeEscapeClause()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsLikeEscapeClause()
+.
+Return
+Boolean
+—
+true
+if this database supports specifying a
+LIKE
+escape clause;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsLimitedOuterJoins()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsLimitedOuterJoins()
+.
+Return
+Boolean
+—
+true
+if this database provides limited support for outer joins;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsMinimumSQLGrammar()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMinimumSQLGrammar()
+.
+Return
+Boolean
+—
+true
+if this database supports the ODBC Minimum SQL grammar;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsMixedCaseIdentifiers()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMixedCaseIdentifiers()
+.
+Return
+Boolean
+—
+true
+if the database treats mixed case unquoted SQL identifiers as
+    case-sensitive and as a result stores them in mixed case;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsMixedCaseQuotedIdentifiers()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMixedCaseQuotedIdentifiers()
+.
+Return
+Boolean
+—
+true
+if the database treats mixed case quoted SQL identifiers as case-sensitive
+    and as a result stores them in mixed case;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsMultipleOpenResults()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMultipleOpenResults()
+.
+Return
+Boolean
+—
+true
+if a callable statement can return multiple result sets simultenously;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsMultipleResultSets()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMultipleResultSets()
+.
+Return
+Boolean
+—
+true
+if this database supports getting multiple result sets from a single
+    execution call;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsMultipleTransactions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMultipleTransactions()
+.
+Return
+Boolean
+—
+true
+if this database supports having multiple transactions on different
+    connections open at once;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsNamedParameters()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsNamedParameters()
+.
+Return
+Boolean
+—
+true
+if the database supports named parameters to callable statements;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsNonNullableColumns()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsNonNullableColumns()
+.
+Return
+Boolean
+—
+true
+if columns in this database may be defined as non-nullable;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsOpenCursorsAcrossCommit()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOpenCursorsAcrossCommit()
+.
+Return
+Boolean
+—
+true
+if this database supports keeping cursors always open across commits;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsOpenCursorsAcrossRollback()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOpenCursorsAcrossRollback()
+.
+Return
+Boolean
+—
+true
+if this database supports keeping cursors always open across rollbacks;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsOpenStatementsAcrossCommit()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOpenStatementsAcrossCommit()
+.
+Return
+Boolean
+—
+true
+if this database supports keeping statements always open across commits;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsOpenStatementsAcrossRollback()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOpenStatementsAcrossRollback()
+.
+Return
+Boolean
+—
+true
+if this database supports keeping statements always open across rollbacks;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsOrderByUnrelated()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOrderByUnrelated()
+.
+Return
+Boolean
+—
+true
+if this database supports using a column that isn't in the
+SELECT
+statement in an
+ORDER BY
+clause;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsOuterJoins()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOuterJoins()
+.
+Return
+Boolean
+—
+true
+if this database supports some form of outer join;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsPositionedDelete()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsPositionedDelete()
+.
+Return
+Boolean
+—
+true
+if this database supports positioned
+DELETE
+statements;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsPositionedUpdate()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsPositionedUpdate()
+.
+Return
+Boolean
+—
+true
+if this database supports positioned
+UPDATE
+statements;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsResultSetConcurrency(type, concurrency)
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsResultSetConcurrency(int, int)
+.
+Parameters
+Name
+Type
+Description
+type
+Integer
+The result set type, which is
+Jdbc.ResultSet.TYPE_FORWARD_ONLY
+,
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+, or
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+.
+concurrency
+Integer
+The concurrency type, which is either
+Jdbc.ResultSet.CONCUR_READ_ONLY
+or
+Jdbc.ResultSet.CONCUR_UPDATABLE
+.
+Return
+Boolean
+—
+true
+if this database supports the specified result set and concurrency type
+    combination;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsResultSetHoldability(holdability)
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsResultSetHoldability(int)
+.
+Parameters
+Name
+Type
+Description
+holdability
+Integer
+A holdability constant to check; one of
+Jdbc.ResultSet.HOLD_CURSORS_OVER_COMMIT
+or
+Jdbc.ResultSet.CLOSE_CURSORS_AT_COMMIT
+.
+Return
+Boolean
+—
+true
+if the database the specified holdability;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsResultSetType(type)
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsResultSetType(int)
+.
+Parameters
+Name
+Type
+Description
+type
+Integer
+The result set type, which is
+Jdbc.ResultSet.TYPE_FORWARD_ONLY
+,
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+, or
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+.
+Return
+Boolean
+—
+true
+if this database supports the specified result set type;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsSavepoints()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSavepoints()
+.
+Return
+Boolean
+—
+true
+if the database supports savepoints;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsSchemasInDataManipulation()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInDataManipulation()
+.
+Return
+Boolean
+—
+true
+if a data manipulation statement can include a schema name;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsSchemasInIndexDefinitions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInIndexDefinitions()
+.
+Return
+Boolean
+—
+true
+if an index definition statement can include a schema name;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsSchemasInPrivilegeDefinitions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInPrivilegeDefinitions()
+.
+Return
+Boolean
+—
+true
+if an privilege definition statement can include a schema name;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsSchemasInProcedureCalls()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInProcedureCalls()
+.
+Return
+Boolean
+—
+true
+if a procedure call statement can include a schema name;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsSchemasInTableDefinitions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInTableDefinitions()
+.
+Return
+Boolean
+—
+true
+if a table definition statement can include a schema name;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsSelectForUpdate()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSelectForUpdate()
+.
+Return
+Boolean
+—
+true
+if this database supports
+SELECT FOR UPDATE
+statements;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsStatementPooling()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsStatementPooling()
+.
+Return
+Boolean
+—
+true
+if the database supports statement pooling;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsStoredFunctionsUsingCallSyntax()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsStoredFunctionsUsingCallSyntax()
+.
+Return
+Boolean
+—
+true
+if the database supports invoking user-defined or vendor functions using
+    the stored procedure escape syntax;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsStoredProcedures()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsStoredProcedures()
+.
+Return
+Boolean
+—
+true
+if this database supports stored procedure calls that used the stored
+    procedure escape syntax;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsSubqueriesInComparisons()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSubqueriesInComparisons()
+.
+Return
+Boolean
+—
+true
+if this database supports subqueries in comparison expressions;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsSubqueriesInExists()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSubqueriesInExists()
+.
+Return
+Boolean
+—
+true
+if this database supports subqueries in
+EXISTS
+expressions;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsSubqueriesInIns()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSubqueriesInIns()
+.
+Return
+Boolean
+—
+true
+if this database supports subqueries in
+IN
+expressions;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsSubqueriesInQuantifieds()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSubqueriesInQuantifieds()
+.
+Return
+Boolean
+—
+true
+if this database supports subqueries in quantified expressions;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsTableCorrelationNames()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsTableCorrelationNames()
+.
+Return
+Boolean
+—
+true
+if this database supports table corelation names;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsTransactionIsolationLevel(level)
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsTransactionIsolationLevel(int)
+.
+Parameters
+Name
+Type
+Description
+level
+Integer
+The transaction isolation level to determine the support of. This must be one of
+Jdbc.Connection.TRANSACTION_READ_UNCOMMITTED
+,
+Jdbc.Connection.TRANSACTION_READ_COMMITTED
+,
+Jdbc.Connection.TRANSACTION_REPEATABLE_READ
+,
+Jdbc.Connection.TRANSACTION_SERIALIZABLE
+, or
+Jdbc.Connection.TRANSACTION_NONE
+.
+Return
+Boolean
+—
+true
+if this database supports the given transaction isolation level;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsTransactions()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsTransactions()
+.
+Return
+Boolean
+—
+true
+if this database supports transactions;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsUnion()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsUnion()
+.
+Return
+Boolean
+—
+true
+if this database supports SQL
+UNION
+;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+supportsUnionAll()
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsUnionAll()
+.
+Return
+Boolean
+—
+true
+if this database supports SQL
+UNION ALL
+;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+updatesAreDetected(type)
+For documentation of this method, see
+java.sql.DatabaseMetaData#updatesAreDetected(int)
+.
+Parameters
+Name
+Type
+Description
+type
+Integer
+The result set type, which is
+Jdbc.ResultSet.TYPE_FORWARD_ONLY
+,
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+, or
+Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE
+.
+Return
+Boolean
+—
+true
+if for the specified result set type a visible row update is detected by
+    calls to
+JdbcResultSet.rowUpdated()
+;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+usesLocalFilePerTable()
+For documentation of this method, see
+java.sql.DatabaseMetaData#usesLocalFilePerTable()
+.
+Return
+Boolean
+—
+true
+if the database stores each table in a separate local file;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request
+usesLocalFiles()
+For documentation of this method, see
+java.sql.DatabaseMetaData#usesLocalFiles()
+.
+Return
+Boolean
+—
+true
+if the database stores tables in a local file;
+false
+otherwise.
+Authorization
+Scripts that use this method require authorization with one or more of the following
+scopes
+:
+https://www.googleapis.com/auth/script.external_request

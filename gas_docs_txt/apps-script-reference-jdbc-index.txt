@@ -1,0 +1,3964 @@
+Source Path: gas_docs_html/apps-script/reference/jdbc/index.html
+
+AI-generated Key Takeaways
+outlined_flag
+The Apps Script JDBC service allows connecting to various JDBC-compliant databases like Google Cloud SQL, MySQL, Microsoft SQL Server, and Oracle.
+The
+Jdbc
+class is the primary entry point for establishing database connections and creating date/time objects.
+The service provides numerous classes representing JDBC concepts, such as
+JdbcConnection
+,
+JdbcStatement
+,
+JdbcResultSet
+, and metadata classes, mirroring methods from the
+java.sql
+package.
+These classes offer comprehensive methods for managing connections, executing queries and updates, handling different data types (including large objects and XML), retrieving result set information, and obtaining database metadata.
+JDBC
+This service allows scripts to connect to JDBC-compliant databases, including
+Google Cloud SQL, MySQL, Microsoft SQL Server, and Oracle. See also the
+guide to JDBC
+.
+Classes
+Name
+Brief description
+Jdbc
+The JDBC service allows scripts to connect to
+Google Cloud SQL
+, MySQL,
+Microsoft SQL Server, and Oracle databases.
+JdbcArray
+A JDBC
+Array
+.
+JdbcBlob
+A JDBC
+Blob
+.
+JdbcCallableStatement
+A JDBC
+CallableStatement
+.
+JdbcClob
+A JDBC
+Clob
+.
+JdbcConnection
+A JDBC
+Connection
+.
+JdbcDatabaseMetaData
+A JDBC database metadata object.
+JdbcDate
+A JDBC
+Date
+.
+JdbcParameterMetaData
+A JDBC
+ParameterMetaData
+.
+JdbcPreparedStatement
+A JDBC
+PreparedStatement
+.
+JdbcRef
+A JDBC
+Ref
+.
+JdbcResultSet
+A JDBC
+ResultSet
+.
+JdbcResultSetMetaData
+A JDBC
+ResultSetMetaData
+.
+JdbcRowId
+A JDBC
+RowId
+.
+JdbcSQLXML
+A JDBC
+SQLXML
+.
+JdbcSavepoint
+A JDBC
+Savepoint
+.
+JdbcStatement
+A JDBC
+Statement
+.
+JdbcStruct
+A JDBC
+Struct
+.
+JdbcTime
+A JDBC
+Time
+.
+JdbcTimestamp
+A JDBC
+Timestamp
+.
+Jdbc
+Methods
+Method
+Return type
+Brief description
+getCloudSqlConnection(url)
+JdbcConnection
+Attempts to establish a connection to the given Google Cloud SQL URL.
+getCloudSqlConnection(url, info)
+JdbcConnection
+Attempts to establish a connection to the given Google Cloud SQL URL.
+getCloudSqlConnection(url, userName, password)
+JdbcConnection
+Attempts to establish a connection to the given Google Cloud SQL URL.
+getConnection(url)
+JdbcConnection
+Attempts to establish a connection to the given database URL.
+getConnection(url, info)
+JdbcConnection
+Attempts to establish a connection to the given database URL.
+getConnection(url, userName, password)
+JdbcConnection
+Attempts to establish a connection to the given database using a username and password.
+newDate(milliseconds)
+JdbcDate
+Create a date from milliseconds since epoch.
+newTime(milliseconds)
+JdbcTime
+Create a time from milliseconds since epoch.
+newTimestamp(milliseconds)
+JdbcTimestamp
+Create a timestamp from milliseconds since epoch.
+parseDate(date)
+JdbcDate
+Create a date by parsing the SQL date string.
+parseTime(time)
+JdbcTime
+Create a time by parsing the SQL time string.
+parseTimestamp(timestamp)
+JdbcTimestamp
+Create a timestamp by parsing the SQL timestamp string.
+JdbcArray
+Methods
+Method
+Return type
+Brief description
+free()
+void
+For documentation of this method, see
+java.sql.Array#free()
+.
+getArray()
+Object
+For documentation of this method, see
+java.sql.Array#getArray()
+getArray(index, count)
+Object
+For documentation of this method, see
+java.sql.Array#getArray(long, int)
+.
+getBaseType()
+Integer
+For documentation of this method, see
+java.sql.Array#getBaseType()
+.
+getBaseTypeName()
+String
+For documentation of this method, see
+java.sql.Array#getBaseTypeName()
+.
+getResultSet()
+JdbcResultSet
+For documentation of this method, see
+java.sql.Array#getResultSet()
+.
+getResultSet(index, count)
+JdbcResultSet
+For documentation of this method, see
+java.sql.Array#getResultSet(long, int)
+.
+JdbcBlob
+Methods
+Method
+Return type
+Brief description
+free()
+void
+For documentation of this method, see
+java.sql.Blob#free()
+.
+getAppsScriptBlob()
+Blob
+Gets the content of this JdbcBlob as an Apps Script blob.
+getAs(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+getBytes(position, length)
+Byte[]
+For documentation of this method, see
+java.sql.Blob#getBytes(long, int)
+.
+length()
+Integer
+For documentation of this method, see
+java.sql.Blob#length()
+.
+position(pattern, start)
+Integer
+For documentation of this method, see
+java.sql.Blob#position(byte[], long)
+.
+position(pattern, start)
+Integer
+For documentation of this method, see
+java.sql.Blob#position(blob, long)
+.
+setBytes(position, blobSource)
+Integer
+Convenience method for writing a
+JdbcBlob
+to this blob.
+setBytes(position, blobSource, offset, length)
+Integer
+Convenience method for writing a
+JdbcBlob
+to this blob.
+setBytes(position, bytes)
+Integer
+For documentation of this method, see
+java.sql.Blob#setBytes(long, byte[])
+.
+setBytes(position, bytes, offset, length)
+Integer
+For documentation of this method, see
+java.sql.Blob#setBytes(long, byte[], int, int)
+.
+truncate(length)
+void
+For documentation of this method, see
+java.sql.Blob#truncate(long)
+.
+JdbcCallableStatement
+Methods
+Method
+Return type
+Brief description
+addBatch()
+void
+For documentation of this method, see
+java.sql.PreparedStatement#addBatch()
+.
+addBatch(sql)
+void
+For documentation of this method, see
+java.sql.Statement#addBatch(String)
+.
+cancel()
+void
+For documentation of this method, see
+java.sql.Statement#cancel()
+.
+clearBatch()
+void
+For documentation of this method, see
+java.sql.Statement#clearBatch()
+.
+clearParameters()
+void
+For documentation of this method, see
+java.sql.PreparedStatement#clearParameters()
+.
+clearWarnings()
+void
+For documentation of this method, see
+java.sql.Statement#clearWarnings()
+.
+close()
+void
+For documentation of this method, see
+java.sql.Statement#close()
+.
+execute()
+Boolean
+For documentation of this method, see
+java.sql.PreparedStatement#execute()
+.
+execute(sql)
+Boolean
+For documentation of this method, see
+java.sql.Statement#execute(String)
+.
+execute(sql, autoGeneratedKeys)
+Boolean
+For documentation of this method, see
+java.sql.Statement#execute(String, int)
+.
+execute(sql, columnIndexes)
+Boolean
+For documentation of this method, see
+java.sql.Statement#execute(String, int[])
+.
+execute(sql, columnNames)
+Boolean
+For documentation of this method, see
+java.sql.Statement#execute(String, String[])
+.
+executeBatch()
+Integer[]
+For documentation of this method, see
+java.sql.Statement#executeBatch()
+.
+executeBatch(parameters)
+Integer[]
+Submits a batch of commands to the database for execution and if all commands execute
+successfully, returns an array of update counts.
+executeQuery()
+JdbcResultSet
+For documentation of this method, see
+java.sql.PreparedStatement#executeQuery()
+.
+executeQuery(sql)
+JdbcResultSet
+For documentation of this method, see
+java.sql.Statement#executeQuery(String)
+.
+executeUpdate()
+Integer
+For documentation of this method, see
+java.sql.PreparedStatement#executeUpdate()
+.
+executeUpdate(sql)
+Integer
+For documentation of this method, see
+java.sql.Statement#executeUpdate(String)
+.
+executeUpdate(sql, autoGeneratedKeys)
+Integer
+For documentation of this method, see
+java.sql.Statement#executeUpdate(String, int)
+.
+executeUpdate(sql, columnIndexes)
+Integer
+For documentation of this method, see
+java.sql.Statement#executeUpdate(String, int[])
+.
+executeUpdate(sql, columnNames)
+Integer
+For documentation of this method, see
+java.sql.Statement#executeUpdate(String, String[])
+.
+getArray(parameterIndex)
+JdbcArray
+For documentation of this method, see
+java.sql.CallableStatement#getArray(int)
+.
+getArray(parameterName)
+JdbcArray
+For documentation of this method, see
+java.sql.CallableStatement#getArray(String)
+.
+getBigDecimal(parameterIndex)
+BigNumber
+For documentation of this method, see
+java.sql.CallableStatement#getBigDecimal(int)
+.
+getBigDecimal(parameterName)
+BigNumber
+For documentation of this method, see
+java.sql.CallableStatement#getBigDecimal(String)
+.
+getBlob(parameterIndex)
+JdbcBlob
+For documentation of this method, see
+java.sql.CallableStatement#getBlob(int)
+.
+getBlob(parameterName)
+JdbcBlob
+For documentation of this method, see
+java.sql.CallableStatement#getBlob(String)
+.
+getBoolean(parameterIndex)
+Boolean
+For documentation of this method, see
+java.sql.CallableStatement#getBoolean(int)
+.
+getBoolean(parameterName)
+Boolean
+For documentation of this method, see
+java.sql.CallableStatement#getBoolean(String)
+.
+getByte(parameterIndex)
+Byte
+For documentation of this method, see
+java.sql.CallableStatement#getByte(int)
+.
+getByte(parameterName)
+Byte
+For documentation of this method, see
+java.sql.CallableStatement#getByte(String)
+.
+getBytes(parameterIndex)
+Byte[]
+For documentation of this method, see
+java.sql.CallableStatement#getBytes(int)
+.
+getBytes(parameterName)
+Byte[]
+For documentation of this method, see
+java.sql.CallableStatement#getBytes(String)
+.
+getClob(parameterIndex)
+JdbcClob
+For documentation of this method, see
+java.sql.CallableStatement#getClob(int)
+.
+getClob(parameterName)
+JdbcClob
+For documentation of this method, see
+java.sql.CallableStatement#getClob(String)
+.
+getConnection()
+JdbcConnection
+For documentation of this method, see
+java.sql.Statement#getConnection()
+.
+getDate(parameterIndex)
+JdbcDate
+For documentation of this method, see
+java.sql.CallableStatement#getDate(int)
+.
+getDate(parameterIndex, timeZone)
+JdbcDate
+For documentation of this method, see
+java.sql.CallableStatement#getDate(int, Calendar)
+.
+getDate(parameterName)
+JdbcDate
+For documentation of this method, see
+java.sql.CallableStatement#getDate(String)
+.
+getDate(parameterName, timeZone)
+JdbcDate
+For documentation of this method, see
+java.sql.CallableStatement#getDate(String, Calendar)
+.
+getDouble(parameterIndex)
+Number
+For documentation of this method, see
+java.sql.CallableStatement#getDouble(int)
+.
+getDouble(parameterName)
+Number
+For documentation of this method, see
+java.sql.CallableStatement#getDouble(String)
+.
+getFetchDirection()
+Integer
+For documentation of this method, see
+java.sql.Statement#getFetchDirection()
+.
+getFetchSize()
+Integer
+For documentation of this method, see
+java.sql.Statement#getFetchSize()
+.
+getFloat(parameterIndex)
+Number
+For documentation of this method, see
+java.sql.CallableStatement#getFloat(int)
+.
+getFloat(parameterName)
+Number
+For documentation of this method, see
+java.sql.CallableStatement#getFloat(String)
+.
+getGeneratedKeys()
+JdbcResultSet
+For documentation of this method, see
+java.sql.Statement#getGeneratedKeys()
+.
+getInt(parameterIndex)
+Integer
+For documentation of this method, see
+java.sql.CallableStatement#getInt(int)
+.
+getInt(parameterName)
+Integer
+For documentation of this method, see
+java.sql.CallableStatement#getInt(String)
+.
+getLong(parameterIndex)
+Integer
+For documentation of this method, see
+java.sql.CallableStatement#getLong(int)
+.
+getLong(parameterName)
+Integer
+For documentation of this method, see
+java.sql.CallableStatement#getLong(String)
+.
+getMaxFieldSize()
+Integer
+For documentation of this method, see
+java.sql.Statement#getMaxFieldSize()
+.
+getMaxRows()
+Integer
+For documentation of this method, see
+java.sql.Statement#getMaxRows()
+.
+getMetaData()
+JdbcResultSetMetaData
+For documentation of this method, see
+java.sql.PreparedStatement#getMetaData()
+.
+getMoreResults()
+Boolean
+For documentation of this method, see
+java.sql.Statement#getMoreResults()
+.
+getMoreResults(current)
+Boolean
+For documentation of this method, see
+java.sql.Statement#getMoreResults(int)
+.
+getNClob(parameterIndex)
+JdbcClob
+For documentation of this method, see
+java.sql.CallableStatement#getNClob(int)
+.
+getNClob(parameterName)
+JdbcClob
+For documentation of this method, see
+java.sql.CallableStatement#getNClob(String)
+.
+getNString(parameterIndex)
+String
+For documentation of this method, see
+java.sql.CallableStatement#getNString(int)
+.
+getNString(parameterName)
+String
+For documentation of this method, see
+java.sql.CallableStatement#getNString(String)
+.
+getObject(parameterIndex)
+Object
+For documentation of this method, see
+java.sql.CallableStatement#getObject(int)
+.
+getObject(parameterName)
+Object
+For documentation of this method, see
+java.sql.CallableStatement#getObject(String)
+.
+getParameterMetaData()
+JdbcParameterMetaData
+For documentation of this method, see
+java.sql.PreparedStatement#getParameterMetaData()
+.
+getQueryTimeout()
+Integer
+For documentation of this method, see
+java.sql.Statement#getQueryTimeout()
+.
+getRef(parameterIndex)
+JdbcRef
+For documentation of this method, see
+java.sql.CallableStatement#getRef(int)
+.
+getRef(parameterName)
+JdbcRef
+For documentation of this method, see
+java.sql.CallableStatement#getRef(String)
+.
+getResultSet()
+JdbcResultSet
+For documentation of this method, see
+java.sql.Statement#getResultSet()
+.
+getResultSetConcurrency()
+Integer
+For documentation of this method, see
+java.sql.Statement#getResultSetConcurrency()
+.
+getResultSetHoldability()
+Integer
+For documentation of this method, see
+java.sql.Statement#getResultSetHoldability()
+.
+getResultSetType()
+Integer
+For documentation of this method, see
+java.sql.Statement#getResultSetType()
+.
+getRowId(parameterIndex)
+JdbcRowId
+For documentation of this method, see
+java.sql.CallableStatement#getRowId(int)
+.
+getRowId(parameterName)
+JdbcRowId
+For documentation of this method, see
+java.sql.CallableStatement#getRowId(String)
+.
+getSQLXML(parameterIndex)
+JdbcSQLXML
+For documentation of this method, see
+java.sql.CallableStatement#getSQLXML(int)
+.
+getSQLXML(parameterName)
+JdbcSQLXML
+For documentation of this method, see
+java.sql.CallableStatement#getSQLXML(String)
+.
+getShort(parameterIndex)
+Integer
+For documentation of this method, see
+java.sql.CallableStatement#getShort(int)
+.
+getShort(parameterName)
+Integer
+For documentation of this method, see
+java.sql.CallableStatement#getShort(String)
+.
+getString(parameterIndex)
+String
+For documentation of this method, see
+java.sql.CallableStatement#getString(int)
+.
+getString(parameterName)
+String
+For documentation of this method, see
+java.sql.CallableStatement#getString(String)
+.
+getTime(parameterIndex)
+JdbcTime
+For documentation of this method, see
+java.sql.CallableStatement#getTime(int)
+.
+getTime(parameterIndex, timeZone)
+JdbcTime
+For documentation of this method, see
+java.sql.CallableStatement#getTime(int, Calendar)
+.
+getTime(parameterName)
+JdbcTime
+For documentation of this method, see
+java.sql.CallableStatement#getTime(String)
+.
+getTime(parameterName, timeZone)
+JdbcTime
+For documentation of this method, see
+java.sql.CallableStatement#getTime(String, Calendar)
+.
+getTimestamp(parameterIndex)
+JdbcTimestamp
+For documentation of this method, see
+java.sql.CallableStatement#getTimestamp(int)
+.
+getTimestamp(parameterIndex, timeZone)
+JdbcTimestamp
+For documentation of this method, see
+java.sql.CallableStatement#getTimestamp(int, Calendar)
+.
+getTimestamp(parameterName)
+JdbcTimestamp
+For documentation of this method, see
+java.sql.CallableStatement#getTimestamp(String)
+.
+getTimestamp(parameterName, timeZone)
+JdbcTimestamp
+For documentation of this method, see
+java.sql.CallableStatement#getTimestamp(String, Calendar)
+.
+getURL(parameterIndex)
+String
+For documentation of this method, see
+java.sql.CallableStatement#getURL(int)
+.
+getURL(parameterName)
+String
+For documentation of this method, see
+java.sql.CallableStatement#getURL(String)
+.
+getUpdateCount()
+Integer
+For documentation of this method, see
+java.sql.Statement#getUpdateCount()
+.
+getWarnings()
+String[]
+For documentation of this method, see
+java.sql.Statement#getWarnings()
+.
+isClosed()
+Boolean
+For documentation of this method, see
+java.sql.Statement#isClosed()
+.
+isPoolable()
+Boolean
+For documentation of this method, see
+java.sql.Statement#isPoolable()
+.
+registerOutParameter(parameterIndex, sqlType)
+void
+For documentation of this method, see
+java.sql.CallableStatement#registerOutParameter(int, int)
+.
+registerOutParameter(parameterIndex, sqlType, scale)
+void
+For documentation of this method, see
+java.sql.CallableStatement#registerOutParameter(int, int, int)
+.
+registerOutParameter(parameterIndex, sqlType, typeName)
+void
+For documentation of this method, see
+java.sql.CallableStatement#registerOutParameter(int, int, String)
+.
+registerOutParameter(parameterName, sqlType)
+void
+For documentation of this method, see
+java.sql.CallableStatement#registerOutParameter(String, int)
+.
+registerOutParameter(parameterName, sqlType, scale)
+void
+For documentation of this method, see
+java.sql.CallableStatement#registerOutParameter(String, int, int)
+.
+registerOutParameter(parameterName, sqlType, typeName)
+void
+For documentation of this method, see
+java.sql.CallableStatement#registerOutParameter(String, int, String)
+.
+setArray(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setArray(int, Array)
+.
+setBigDecimal(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setBigDecimal(int, BigDecimal)
+.
+setBigDecimal(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setBigDecimal(String, BigDecimal)
+.
+setBlob(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setBlob(int, Clob)
+.
+setBlob(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setBlob(String, Blob)
+.
+setBoolean(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setBoolean(int, boolean)
+.
+setBoolean(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setBoolean(String, boolean)
+.
+setByte(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setByte(int, byte)
+.
+setByte(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setByte(String, byte)
+.
+setBytes(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setBytes(int, byte[])
+.
+setBytes(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setBytes(String, byte[])
+.
+setClob(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setClob(int, Clob)
+.
+setClob(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setBlob(String, Clob)
+.
+setCursorName(name)
+void
+For documentation of this method, see
+java.sql.Statement#setCursorName(String)
+.
+setDate(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setDate(int, Date)
+.
+setDate(parameterIndex, x, timeZone)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setDate(int, Date, Calendar)
+.
+setDate(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setDate(String, Date)
+.
+setDate(parameterName, x, timeZone)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setDate(String, Date, Calendar)
+.
+setDouble(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setDouble(int, double)
+.
+setDouble(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setDouble(String, double)
+.
+setEscapeProcessing(enable)
+void
+For documentation of this method, see
+java.sql.Statement#setEscapeProcessing(boolean)
+.
+setFetchDirection(direction)
+void
+For documentation of this method, see
+java.sql.Statement#setFetchDirection(int)
+.
+setFetchSize(rows)
+void
+For documentation of this method, see
+java.sql.Statement#setFetchSize(int)
+.
+setFloat(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setFloat(int, float)
+.
+setFloat(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setFloat(String, float)
+.
+setInt(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setInt(int, int)
+.
+setInt(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setInt(String, int)
+.
+setLong(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setLong(int, long)
+.
+setLong(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setLong(String, long)
+.
+setMaxFieldSize(max)
+void
+For documentation of this method, see
+java.sql.Statement#setMaxFieldSize(int)
+.
+setMaxRows(max)
+void
+For documentation of this method, see
+java.sql.Statement#setMaxRows(int)
+.
+setNClob(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setNClob(int, NClob)
+.
+setNClob(parameterName, value)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setNClob(String, NClob)
+.
+setNString(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setNString(int, String)
+.
+setNString(parameterName, value)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setNString(String, String)
+.
+setNull(parameterIndex, sqlType)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setNull(int, int)
+.
+setNull(parameterIndex, sqlType, typeName)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setNull(int, int, String)
+.
+setNull(parameterName, sqlType)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setNull(String, int)
+.
+setNull(parameterName, sqlType, typeName)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setNull(String, int, String)
+.
+setObject(index, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setObject(int, Object)
+.
+setObject(parameterIndex, x, targetSqlType)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setObject(int, Object, int)
+.
+setObject(parameterIndex, x, targetSqlType, scaleOrLength)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setObject(int, Object, int, int)
+.
+setObject(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setObject(String, Object)
+.
+setObject(parameterName, x, targetSqlType)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setObject(String, Object, int)
+.
+setObject(parameterName, x, targetSqlType, scale)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setObject(String, Object, int, int)
+.
+setPoolable(poolable)
+void
+For documentation of this method, see
+java.sql.Statement#setPoolable(boolean)
+.
+setQueryTimeout(seconds)
+void
+For documentation of this method, see
+java.sql.Statement#setQueryTimeout(int)
+.
+setRef(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setRef(int, Ref)
+.
+setRowId(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setRowId(int, RowId)
+.
+setRowId(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setRowId(String, RowId)
+.
+setSQLXML(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setSQLXML(int, SQLXML)
+.
+setSQLXML(parameterName, xmlObject)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setSQLXML(String, SQLXML)
+.
+setShort(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setShort(int, short)
+.
+setShort(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setShort(String, short)
+.
+setString(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setString(int, String)
+.
+setString(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setString(String, String)
+.
+setTime(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setTime(int, Time)
+.
+setTime(parameterIndex, x, timeZone)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setTime(int, Time, Calendar)
+.
+setTime(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setTime(String, Time)
+.
+setTime(parameterName, x, timeZone)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setTime(String, Time, Calendar)
+.
+setTimestamp(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setTimestamp(int, Timestamp)
+.
+setTimestamp(parameterIndex, x, timeZone)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setTimestamp(int, Timestamp, Calendar)
+.
+setTimestamp(parameterName, x)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setTimestamp(String, Timestamp)
+.
+setTimestamp(parameterName, x, timeZone)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setTimestamp(String, Timestamp, Calendar)
+.
+setURL(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setURL(int, URL)
+.
+setURL(parameterName, val)
+void
+For documentation of this method, see
+java.sql.CallableStatement#setURL(String, URL)
+.
+wasNull()
+Boolean
+For documentation of this method, see
+java.sql.CallableStatement#wasNull()
+.
+JdbcClob
+Methods
+Method
+Return type
+Brief description
+free()
+void
+For documentation of this method, see
+java.sql.Clob#truncate(long)
+.
+getAppsScriptBlob()
+Blob
+Gets the content of this JdbcClob as an Apps Script blob.
+getAs(contentType)
+Blob
+Return the data inside this object as a blob converted to the specified content type.
+getSubString(position, length)
+String
+For documentation of this method, see
+java.sql.Clob#getSubString(long, int)
+.
+length()
+Integer
+For documentation of this method, see
+java.sql.Clob#length()
+.
+position(search, start)
+Integer
+For documentation of this method, see
+java.sql.Clob#position(Clob, long)
+.
+position(search, start)
+Integer
+For documentation of this method, see
+java.sql.Clob#position(String, long)
+.
+setString(position, blobSource)
+Integer
+Convenience method for writing a
+JdbcClob
+to a clob.
+setString(position, blobSource, offset, len)
+Integer
+Convenience method for writing a
+JdbcClob
+to a clob.
+setString(position, value)
+Integer
+For documentation of this method, see
+java.sql.Clob#setString(long, String)
+.
+setString(position, value, offset, len)
+Integer
+For documentation of this method, see
+java.sql.Clob#setString(long, String, int, int)
+.
+truncate(length)
+void
+For documentation of this method, see
+java.sql.Clob#truncate(long)
+.
+JdbcConnection
+Methods
+Method
+Return type
+Brief description
+clearWarnings()
+void
+For documentation of this method, see
+java.sql.Connection#clearWarnings()
+.
+close()
+void
+Release this connection's database and all associated resources.
+commit()
+void
+Makes all pending changes permanent, releases database locks held by this
+JdbcConnection
+.
+createArrayOf(typeName, elements)
+JdbcArray
+For documentation of this method, see
+java.sql.Connection#createArrayOf(String, Object[])
+.
+createBlob()
+JdbcBlob
+Constructs a
+JdbcBlob
+instance.
+createClob()
+JdbcClob
+For documentation of this method, see
+java.sql.Connection#createClob()
+.
+createNClob()
+JdbcClob
+For documentation of this method, see
+java.sql.Connection#createNClob()
+.
+createSQLXML()
+JdbcSQLXML
+For documentation of this method, see
+java.sql.Connection#createSQLXML()
+.
+createStatement()
+JdbcStatement
+Creates a
+JdbcStatement
+object for sending SQL statements to the database.
+createStatement(resultSetType, resultSetConcurrency)
+JdbcStatement
+Creates a
+JdbcStatement
+object for sending SQL statements to the database.
+createStatement(resultSetType, resultSetConcurrency, resultSetHoldability)
+JdbcStatement
+Creates a
+JdbcStatement
+object for sending SQL statements to the database.
+createStruct(typeName, attributes)
+JdbcStruct
+For documentation of this method, see
+java.sql.Connection#createStruct(String, Object[])
+.
+getAutoCommit()
+Boolean
+For documentation of this method, see
+java.sql.Connection#getAutoCommit()
+.
+getCatalog()
+String
+or documentation of this method, see
+java.sql.Connection#getCatalog()
+.
+getHoldability()
+Integer
+For documentation of this method, see
+java.sql.Connection#getHoldability()
+.
+getMetaData()
+JdbcDatabaseMetaData
+For documentation of this method, see
+java.sql.Connection#getMetaData()
+.
+getTransactionIsolation()
+Integer
+For documentation of this method, see
+java.sql.Connection#getTransactionIsolation()
+.
+getWarnings()
+String[]
+For documentation of this method, see
+java.sql.Connection#getWarnings()
+.
+isClosed()
+Boolean
+For documentation of this method, see
+java.sql.Connection#isClosed()
+.
+isReadOnly()
+Boolean
+For documentation of this method, see
+java.sql.Connection#isReadOnly()
+.
+isValid(timeout)
+Boolean
+For documentation of this method, see
+java.sql.Connection#isValid(int)
+.
+nativeSQL(sql)
+String
+For documentation of this method, see
+java.sql.Connection#nativeSQL(String)
+.
+prepareCall(sql)
+JdbcCallableStatement
+For documentation of this method, see
+java.sql.Connection#prepareCall(String)
+.
+prepareCall(sql, resultSetType, resultSetConcurrency)
+JdbcCallableStatement
+For documentation of this method, see
+java.sql.Connection#prepareCall(String, int, int)
+.
+prepareCall(sql, resultSetType, resultSetConcurrency, resultSetHoldability)
+JdbcCallableStatement
+For documentation of this method, see
+java.sql.Connection#prepareCall(String, int, int, int)
+.
+prepareStatement(sql)
+JdbcPreparedStatement
+For documentation of this method, see
+java.sql.Connection#prepareStatement(String)
+.
+prepareStatement(sql, autoGeneratedKeys)
+JdbcPreparedStatement
+For documentation of this method, see
+java.sql.Connection#prepareStatement(String, int)
+.
+prepareStatement(sql, resultSetType, resultSetConcurrency)
+JdbcPreparedStatement
+For documentation of this method, see
+java.sql.Connection#prepareStatement(String, int, int)
+.
+prepareStatement(sql, resultSetType, resultSetConcurrency, resultSetHoldability)
+JdbcPreparedStatement
+For documentation of this method, see
+java.sql.Connection#prepareStatement(String, int, int, int)
+.
+prepareStatementByIndex(sql, indices)
+JdbcPreparedStatement
+For documentation of this method, see
+java.sql.Connection#prepareStatement(String, int[])
+.
+prepareStatementByName(sql, columnNames)
+JdbcPreparedStatement
+For documentation of this method, see
+java.sql.Connection#prepareStatement(String, String[])
+.
+releaseSavepoint(savepoint)
+void
+For documentation of this method, see
+java.sql.Connection#releaseSavepoint(Savepoint)
+.
+rollback()
+void
+For documentation of this method, see
+java.sql.Connection#rollback()
+.
+rollback(savepoint)
+void
+For documentation of this method, see
+java.sql.Connection#rollback(Savepoint)
+.
+setAutoCommit(autoCommit)
+void
+For documentation of this method, see
+java.sql.Connection#setAutoCommit(boolean)
+.
+setCatalog(catalog)
+void
+For documentation of this method, see
+java.sql.Connection#setCatalog(String)
+.
+setHoldability(holdability)
+void
+For documentation of this method, see
+java.sql.Connection#setHoldability(int)
+.
+setReadOnly(readOnly)
+void
+For documentation of this method, see
+java.sql.Connection#setReadOnly(boolean)
+.
+setSavepoint()
+JdbcSavepoint
+For documentation of this method, see
+java.sql.Connection#setSavepoint()
+.
+setSavepoint(name)
+JdbcSavepoint
+For documentation of this method, see
+java.sql.Connection#setSavepoint(String)
+.
+setTransactionIsolation(level)
+void
+For documentation of this method, see
+java.sql.Connection#setTransactionIsolation(int)
+.
+JdbcDatabaseMetaData
+Methods
+Method
+Return type
+Brief description
+allProceduresAreCallable()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#allProceduresAreCallable()
+.
+allTablesAreSelectable()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#allTablesAreSelectable()
+.
+autoCommitFailureClosesAllResultSets()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#autoCommitFailureClosesAllResultSets()
+.
+dataDefinitionCausesTransactionCommit()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#dataDefinitionCausesTransactionCommit()
+.
+dataDefinitionIgnoredInTransactions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#dataDefinitionIgnoredInTransactions()
+.
+deletesAreDetected(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#deletesAreDetected(int)
+.
+doesMaxRowSizeIncludeBlobs()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#doesMaxRowSizeIncludeBlobs()
+.
+getAttributes(catalog, schemaPattern, typeNamePattern, attributeNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getAttributes(String, String, String, String)
+.
+getBestRowIdentifier(catalog, schema, table, scope, nullable)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getBestRowIdentifier(String, String, String, int, boolean)
+.
+getCatalogSeparator()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getCatalogSeparator()
+.
+getCatalogTerm()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getCatalogTerm()
+.
+getCatalogs()
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getCatalogs()
+.
+getClientInfoProperties()
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getClientInfoProperties()
+.
+getColumnPrivileges(catalog, schema, table, columnNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getColumnPrivileges(String, String, String, String)
+.
+getColumns(catalog, schemaPattern, tableNamePattern, columnNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getColumns(String, String, String, String)
+.
+getConnection()
+JdbcConnection
+For documentation of this method, see
+java.sql.DatabaseMetaData#getConnection()
+.
+getCrossReference(parentCatalog, parentSchema, parentTable, foreignCatalog, foreignSchema, foreignTable)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getCrossReference(String, String, String,
+     String, String, String)
+.
+getDatabaseMajorVersion()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDatabaseMajorVersion()
+.
+getDatabaseMinorVersion()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDatabaseMinorVersion()
+.
+getDatabaseProductName()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDatabaseProductName()
+.
+getDatabaseProductVersion()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDatabaseProductVersion()
+.
+getDefaultTransactionIsolation()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDefaultTransactionIsolation()
+.
+getDriverMajorVersion()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDriverMajorVersion()
+.
+getDriverMinorVersion()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDriverMinorVersion()
+.
+getDriverName()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDriverName()
+.
+getDriverVersion()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getDriverVersion()
+.
+getExportedKeys(catalog, schema, table)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getImportedKeys(String, String, String)
+.
+getExtraNameCharacters()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getExtraNameCharacters()
+.
+getFunctionColumns(catalog, schemaPattern, functionNamePattern, columnNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getFunctionColumns(String, String, String, String)
+.
+getFunctions(catalog, schemaPattern, functionNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getFunctions(String, String, String)
+.
+getIdentifierQuoteString()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getIdentifierQuoteString()
+.
+getImportedKeys(catalog, schema, table)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getImportedKeys(String, String, String)
+.
+getIndexInfo(catalog, schema, table, unique, approximate)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getIndexInfo(String, String, String, boolean, boolean)
+.
+getJDBCMajorVersion()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getJDBCMajorVersion()
+.
+getJDBCMinorVersion()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getJDBCMinorVersion()
+.
+getMaxBinaryLiteralLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxBinaryLiteralLength()
+.
+getMaxCatalogNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxCatalogNameLength()
+.
+getMaxCharLiteralLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxCharLiteralLength()
+.
+getMaxColumnNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnNameLength()
+.
+getMaxColumnsInGroupBy()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInGroupBy()
+.
+getMaxColumnsInIndex()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInIndex()
+.
+getMaxColumnsInOrderBy()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInOrderBy()
+.
+getMaxColumnsInSelect()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInSelect()
+.
+getMaxColumnsInTable()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxColumnsInTable()
+.
+getMaxConnections()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxConnections()
+.
+getMaxCursorNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxCursorNameLength()
+.
+getMaxIndexLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxIndexLength()
+.
+getMaxProcedureNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxProcedureNameLength()
+.
+getMaxRowSize()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxRowSize()
+.
+getMaxSchemaNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxSchemaNameLength()
+.
+getMaxStatementLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxStatementLength()
+.
+getMaxStatements()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxStatements()
+.
+getMaxTableNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxTableNameLength()
+.
+getMaxTablesInSelect()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxTablesInSelect()
+.
+getMaxUserNameLength()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getMaxUserNameLength()
+.
+getNumericFunctions()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getNumericFunctions()
+.
+getPrimaryKeys(catalog, schema, table)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getPrimaryKeys(String, String, String)
+.
+getProcedureColumns(catalog, schemaPattern, procedureNamePattern, columnNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getProcedureColumns(String, String, String, String)
+.
+getProcedureTerm()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getProcedureTerm()
+.
+getProcedures(catalog, schemaPattern, procedureNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getProcedures(String, String, String)
+.
+getResultSetHoldability()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getResultSetHoldability()
+.
+getRowIdLifetime()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getRowIdLifetime()
+.
+getSQLKeywords()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSQLKeywords()
+.
+getSQLStateType()
+Integer
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSQLStateType()
+.
+getSchemaTerm()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSchemaTerm()
+.
+getSchemas()
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSchemas()
+.
+getSchemas(catalog, schemaPattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSchemas()
+.
+getSearchStringEscape()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSearchStringEscape()
+.
+getStringFunctions()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getStringFunctions()
+.
+getSuperTables(catalog, schemaPattern, tableNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSuperTables(String, String,String)
+.
+getSuperTypes(catalog, schemaPattern, typeNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSuperTypes(String, String, String)
+.
+getSystemFunctions()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getSystemFunctions()
+.
+getTablePrivileges(catalog, schemaPattern, tableNamePattern)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTablePrivileges(String, String, String)
+.
+getTableTypes()
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTableTypes()
+.
+getTables(catalog, schemaPattern, tableNamePattern, types)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTables(String, String, String, String[])
+.
+getTimeDateFunctions()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTimeDateFunctions()
+.
+getTypeInfo()
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getTypeInfo()
+.
+getUDTs(catalog, schemaPattern, typeNamePattern, types)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getUDTs(String, String, String, int[])
+.
+getURL()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getURL()
+.
+getUserName()
+String
+For documentation of this method, see
+java.sql.DatabaseMetaData#getUserName()
+.
+getVersionColumns(catalog, schema, table)
+JdbcResultSet
+For documentation of this method, see
+java.sql.DatabaseMetaData#getVersionColumns(String, String, String)
+.
+insertsAreDetected(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#insertsAreDetected(int)
+.
+isCatalogAtStart()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#isCatalogAtStart()
+.
+isReadOnly()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#isReadOnly()
+.
+locatorsUpdateCopy()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#locatorsUpdateCopy()
+.
+nullPlusNonNullIsNull()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullPlusNonNullIsNull()
+.
+nullsAreSortedAtEnd()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullsAreSortedAtEnd()
+.
+nullsAreSortedAtStart()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullsAreSortedAtStart()
+.
+nullsAreSortedHigh()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullsAreSortedHigh()
+.
+nullsAreSortedLow()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#nullsAreSortedLow()
+.
+othersDeletesAreVisible(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#othersDeletesAreVisible(int)
+.
+othersInsertsAreVisible(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#othersInsertsAreVisible(int)
+.
+othersUpdatesAreVisible(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#othersUpdatesAreVisible(int)
+.
+ownDeletesAreVisible(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#ownDeletesAreVisible(int)
+.
+ownInsertsAreVisible(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#ownInsertsAreVisible(int)
+.
+ownUpdatesAreVisible(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#ownUpdatesAreVisible(int)
+.
+storesLowerCaseIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesLowerCaseIdentifiers()
+.
+storesLowerCaseQuotedIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesLowerCaseQuotedIdentifiers()
+.
+storesMixedCaseIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesMixedCaseIdentifiers()
+.
+storesMixedCaseQuotedIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesMixedCaseQuotedIdentifiers()
+.
+storesUpperCaseIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesUpperCaseIdentifiers()
+.
+storesUpperCaseQuotedIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#storesUpperCaseQuotedIdentifiers()
+.
+supportsANSI92EntryLevelSQL()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsANSI92EntryLevelSQL()
+.
+supportsANSI92FullSQL()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsANSI92FullSQL()
+.
+supportsANSI92IntermediateSQL()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsANSI92IntermediateSQL()
+.
+supportsAlterTableWithAddColumn()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsAlterTableWithAddColumn()
+.
+supportsAlterTableWithDropColumn()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsAlterTableWithDropColumn()
+.
+supportsBatchUpdates()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsBatchUpdates()
+.
+supportsCatalogsInDataManipulation()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInDataManipulation()
+.
+supportsCatalogsInIndexDefinitions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInIndexDefinitions()
+.
+supportsCatalogsInPrivilegeDefinitions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInPrivilegeDefinitions()
+.
+supportsCatalogsInProcedureCalls()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInProcedureCalls()
+.
+supportsCatalogsInTableDefinitions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCatalogsInTableDefinitions()
+.
+supportsColumnAliasing()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsColumnAliasing()
+.
+supportsConvert()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsConvert()
+.
+supportsConvert(fromType, toType)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsConvert(int, int)
+.
+supportsCoreSQLGrammar()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCoreSQLGrammar()
+.
+supportsCorrelatedSubqueries()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsCorrelatedSubqueries()
+.
+supportsDataDefinitionAndDataManipulationTransactions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsDataDefinitionAndDataManipulationTransactions()
+.
+supportsDataManipulationTransactionsOnly()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsDataManipulationTransactionsOnly()
+.
+supportsDifferentTableCorrelationNames()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsDifferentTableCorrelationNames()
+.
+supportsExpressionsInOrderBy()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsExpressionsInOrderBy()
+.
+supportsExtendedSQLGrammar()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsExtendedSQLGrammar()
+.
+supportsFullOuterJoins()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsFullOuterJoins()
+.
+supportsGetGeneratedKeys()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsGetGeneratedKeys()
+.
+supportsGroupBy()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsGroupBy()
+.
+supportsGroupByBeyondSelect()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsGroupByBeyondSelect()
+.
+supportsGroupByUnrelated()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsGroupByUnrelated()
+.
+supportsIntegrityEnhancementFacility()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsIntegrityEnhancementFacility()
+.
+supportsLikeEscapeClause()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsLikeEscapeClause()
+.
+supportsLimitedOuterJoins()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsLimitedOuterJoins()
+.
+supportsMinimumSQLGrammar()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMinimumSQLGrammar()
+.
+supportsMixedCaseIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMixedCaseIdentifiers()
+.
+supportsMixedCaseQuotedIdentifiers()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMixedCaseQuotedIdentifiers()
+.
+supportsMultipleOpenResults()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMultipleOpenResults()
+.
+supportsMultipleResultSets()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMultipleResultSets()
+.
+supportsMultipleTransactions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsMultipleTransactions()
+.
+supportsNamedParameters()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsNamedParameters()
+.
+supportsNonNullableColumns()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsNonNullableColumns()
+.
+supportsOpenCursorsAcrossCommit()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOpenCursorsAcrossCommit()
+.
+supportsOpenCursorsAcrossRollback()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOpenCursorsAcrossRollback()
+.
+supportsOpenStatementsAcrossCommit()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOpenStatementsAcrossCommit()
+.
+supportsOpenStatementsAcrossRollback()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOpenStatementsAcrossRollback()
+.
+supportsOrderByUnrelated()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOrderByUnrelated()
+.
+supportsOuterJoins()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsOuterJoins()
+.
+supportsPositionedDelete()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsPositionedDelete()
+.
+supportsPositionedUpdate()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsPositionedUpdate()
+.
+supportsResultSetConcurrency(type, concurrency)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsResultSetConcurrency(int, int)
+.
+supportsResultSetHoldability(holdability)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsResultSetHoldability(int)
+.
+supportsResultSetType(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsResultSetType(int)
+.
+supportsSavepoints()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSavepoints()
+.
+supportsSchemasInDataManipulation()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInDataManipulation()
+.
+supportsSchemasInIndexDefinitions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInIndexDefinitions()
+.
+supportsSchemasInPrivilegeDefinitions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInPrivilegeDefinitions()
+.
+supportsSchemasInProcedureCalls()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInProcedureCalls()
+.
+supportsSchemasInTableDefinitions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSchemasInTableDefinitions()
+.
+supportsSelectForUpdate()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSelectForUpdate()
+.
+supportsStatementPooling()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsStatementPooling()
+.
+supportsStoredFunctionsUsingCallSyntax()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsStoredFunctionsUsingCallSyntax()
+.
+supportsStoredProcedures()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsStoredProcedures()
+.
+supportsSubqueriesInComparisons()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSubqueriesInComparisons()
+.
+supportsSubqueriesInExists()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSubqueriesInExists()
+.
+supportsSubqueriesInIns()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSubqueriesInIns()
+.
+supportsSubqueriesInQuantifieds()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsSubqueriesInQuantifieds()
+.
+supportsTableCorrelationNames()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsTableCorrelationNames()
+.
+supportsTransactionIsolationLevel(level)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsTransactionIsolationLevel(int)
+.
+supportsTransactions()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsTransactions()
+.
+supportsUnion()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsUnion()
+.
+supportsUnionAll()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#supportsUnionAll()
+.
+updatesAreDetected(type)
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#updatesAreDetected(int)
+.
+usesLocalFilePerTable()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#usesLocalFilePerTable()
+.
+usesLocalFiles()
+Boolean
+For documentation of this method, see
+java.sql.DatabaseMetaData#usesLocalFiles()
+.
+JdbcDate
+Methods
+Method
+Return type
+Brief description
+after(when)
+Boolean
+For documentation of this method, see
+java.sql.Date#after(date)
+.
+before(when)
+Boolean
+For documentation of this method, see
+java.sql.Date#before(date)
+.
+getDate()
+Integer
+For documentation of this method, see
+java.sql.Date#getDate()
+.
+getMonth()
+Integer
+For documentation of this method, see
+java.sql.Date#getMonth()
+.
+getTime()
+Integer
+For documentation of this method, see
+java.sql.Date#getTime()
+.
+getYear()
+Integer
+For documentation of this method, see
+java.sql.Date#getYear()
+.
+setDate(date)
+void
+For documentation of this method, see
+java.sql.Date#setDate(int)
+.
+setMonth(month)
+void
+For documentation of this method, see
+java.sql.Date#setMonth(int)
+.
+setTime(milliseconds)
+void
+For documentation of this method, see
+java.sql.Date#setTime(int)
+.
+setYear(year)
+void
+For documentation of this method, see
+java.sql.Date#setYear(int)
+.
+JdbcParameterMetaData
+Methods
+Method
+Return type
+Brief description
+getParameterClassName(param)
+String
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterClassName(int)
+.
+getParameterCount()
+Integer
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterCount()
+.
+getParameterMode(param)
+Integer
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterMode(int)
+.
+getParameterType(param)
+Integer
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterType(int)
+.
+getParameterTypeName(param)
+String
+For documentation of this method, see
+java.sql.ParameterMetaData#getParameterTypeName(int)
+.
+getPrecision(param)
+Integer
+For documentation of this method, see
+java.sql.ParameterMetaData#getPrecision(int)
+.
+getScale(param)
+Integer
+For documentation of this method, see
+java.sql.ParameterMetaData#getScale(int)
+.
+isNullable(param)
+Integer
+For documentation of this method, see
+java.sql.ParameterMetaData#isNullable(int)
+.
+isSigned(param)
+Boolean
+For documentation of this method, see
+java.sql.ParameterMetaData#isSigned(int)
+.
+JdbcPreparedStatement
+Methods
+Method
+Return type
+Brief description
+addBatch()
+void
+For documentation of this method, see
+java.sql.PreparedStatement#addBatch()
+.
+addBatch(sql)
+void
+For documentation of this method, see
+java.sql.Statement#addBatch(String)
+.
+cancel()
+void
+For documentation of this method, see
+java.sql.Statement#cancel()
+.
+clearBatch()
+void
+For documentation of this method, see
+java.sql.Statement#clearBatch()
+.
+clearParameters()
+void
+For documentation of this method, see
+java.sql.PreparedStatement#clearParameters()
+.
+clearWarnings()
+void
+For documentation of this method, see
+java.sql.Statement#clearWarnings()
+.
+close()
+void
+For documentation of this method, see
+java.sql.Statement#close()
+.
+execute()
+Boolean
+For documentation of this method, see
+java.sql.PreparedStatement#execute()
+.
+execute(sql)
+Boolean
+For documentation of this method, see
+java.sql.Statement#execute(String)
+.
+execute(sql, autoGeneratedKeys)
+Boolean
+For documentation of this method, see
+java.sql.Statement#execute(String, int)
+.
+execute(sql, columnIndexes)
+Boolean
+For documentation of this method, see
+java.sql.Statement#execute(String, int[])
+.
+execute(sql, columnNames)
+Boolean
+For documentation of this method, see
+java.sql.Statement#execute(String, String[])
+.
+executeBatch()
+Integer[]
+For documentation of this method, see
+java.sql.Statement#executeBatch()
+.
+executeBatch(parameters)
+Integer[]
+Submits a batch of commands to the database for execution and if all commands execute
+successfully, returns an array of update counts.
+executeQuery()
+JdbcResultSet
+For documentation of this method, see
+java.sql.PreparedStatement#executeQuery()
+.
+executeQuery(sql)
+JdbcResultSet
+For documentation of this method, see
+java.sql.Statement#executeQuery(String)
+.
+executeUpdate()
+Integer
+For documentation of this method, see
+java.sql.PreparedStatement#executeUpdate()
+.
+executeUpdate(sql)
+Integer
+For documentation of this method, see
+java.sql.Statement#executeUpdate(String)
+.
+executeUpdate(sql, autoGeneratedKeys)
+Integer
+For documentation of this method, see
+java.sql.Statement#executeUpdate(String, int)
+.
+executeUpdate(sql, columnIndexes)
+Integer
+For documentation of this method, see
+java.sql.Statement#executeUpdate(String, int[])
+.
+executeUpdate(sql, columnNames)
+Integer
+For documentation of this method, see
+java.sql.Statement#executeUpdate(String, String[])
+.
+getConnection()
+JdbcConnection
+For documentation of this method, see
+java.sql.Statement#getConnection()
+.
+getFetchDirection()
+Integer
+For documentation of this method, see
+java.sql.Statement#getFetchDirection()
+.
+getFetchSize()
+Integer
+For documentation of this method, see
+java.sql.Statement#getFetchSize()
+.
+getGeneratedKeys()
+JdbcResultSet
+For documentation of this method, see
+java.sql.Statement#getGeneratedKeys()
+.
+getMaxFieldSize()
+Integer
+For documentation of this method, see
+java.sql.Statement#getMaxFieldSize()
+.
+getMaxRows()
+Integer
+For documentation of this method, see
+java.sql.Statement#getMaxRows()
+.
+getMetaData()
+JdbcResultSetMetaData
+For documentation of this method, see
+java.sql.PreparedStatement#getMetaData()
+.
+getMoreResults()
+Boolean
+For documentation of this method, see
+java.sql.Statement#getMoreResults()
+.
+getMoreResults(current)
+Boolean
+For documentation of this method, see
+java.sql.Statement#getMoreResults(int)
+.
+getParameterMetaData()
+JdbcParameterMetaData
+For documentation of this method, see
+java.sql.PreparedStatement#getParameterMetaData()
+.
+getQueryTimeout()
+Integer
+For documentation of this method, see
+java.sql.Statement#getQueryTimeout()
+.
+getResultSet()
+JdbcResultSet
+For documentation of this method, see
+java.sql.Statement#getResultSet()
+.
+getResultSetConcurrency()
+Integer
+For documentation of this method, see
+java.sql.Statement#getResultSetConcurrency()
+.
+getResultSetHoldability()
+Integer
+For documentation of this method, see
+java.sql.Statement#getResultSetHoldability()
+.
+getResultSetType()
+Integer
+For documentation of this method, see
+java.sql.Statement#getResultSetType()
+.
+getUpdateCount()
+Integer
+For documentation of this method, see
+java.sql.Statement#getUpdateCount()
+.
+getWarnings()
+String[]
+For documentation of this method, see
+java.sql.Statement#getWarnings()
+.
+isClosed()
+Boolean
+For documentation of this method, see
+java.sql.Statement#isClosed()
+.
+isPoolable()
+Boolean
+For documentation of this method, see
+java.sql.Statement#isPoolable()
+.
+setArray(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setArray(int, Array)
+.
+setBigDecimal(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setBigDecimal(int, BigDecimal)
+.
+setBlob(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setBlob(int, Clob)
+.
+setBoolean(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setBoolean(int, boolean)
+.
+setByte(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setByte(int, byte)
+.
+setBytes(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setBytes(int, byte[])
+.
+setClob(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setClob(int, Clob)
+.
+setCursorName(name)
+void
+For documentation of this method, see
+java.sql.Statement#setCursorName(String)
+.
+setDate(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setDate(int, Date)
+.
+setDate(parameterIndex, x, timeZone)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setDate(int, Date, Calendar)
+.
+setDouble(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setDouble(int, double)
+.
+setEscapeProcessing(enable)
+void
+For documentation of this method, see
+java.sql.Statement#setEscapeProcessing(boolean)
+.
+setFetchDirection(direction)
+void
+For documentation of this method, see
+java.sql.Statement#setFetchDirection(int)
+.
+setFetchSize(rows)
+void
+For documentation of this method, see
+java.sql.Statement#setFetchSize(int)
+.
+setFloat(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setFloat(int, float)
+.
+setInt(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setInt(int, int)
+.
+setLong(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setLong(int, long)
+.
+setMaxFieldSize(max)
+void
+For documentation of this method, see
+java.sql.Statement#setMaxFieldSize(int)
+.
+setMaxRows(max)
+void
+For documentation of this method, see
+java.sql.Statement#setMaxRows(int)
+.
+setNClob(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setNClob(int, NClob)
+.
+setNString(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setNString(int, String)
+.
+setNull(parameterIndex, sqlType)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setNull(int, int)
+.
+setNull(parameterIndex, sqlType, typeName)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setNull(int, int, String)
+.
+setObject(index, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setObject(int, Object)
+.
+setObject(parameterIndex, x, targetSqlType)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setObject(int, Object, int)
+.
+setObject(parameterIndex, x, targetSqlType, scaleOrLength)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setObject(int, Object, int, int)
+.
+setPoolable(poolable)
+void
+For documentation of this method, see
+java.sql.Statement#setPoolable(boolean)
+.
+setQueryTimeout(seconds)
+void
+For documentation of this method, see
+java.sql.Statement#setQueryTimeout(int)
+.
+setRef(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setRef(int, Ref)
+.
+setRowId(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setRowId(int, RowId)
+.
+setSQLXML(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setSQLXML(int, SQLXML)
+.
+setShort(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setShort(int, short)
+.
+setString(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setString(int, String)
+.
+setTime(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setTime(int, Time)
+.
+setTime(parameterIndex, x, timeZone)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setTime(int, Time, Calendar)
+.
+setTimestamp(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setTimestamp(int, Timestamp)
+.
+setTimestamp(parameterIndex, x, timeZone)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setTimestamp(int, Timestamp, Calendar)
+.
+setURL(parameterIndex, x)
+void
+For documentation of this method, see
+java.sql.PreparedStatement#setURL(int, URL)
+.
+JdbcRef
+Methods
+Method
+Return type
+Brief description
+getBaseTypeName()
+String
+For documentation of this method, see
+java.sql.Ref#getBaseTypeName()
+.
+getObject()
+Object
+For documentation of this method, see
+java.sql.Ref#getObject()
+.
+setObject(object)
+void
+For documentation of this method, see
+java.sql.Ref#setObject(Object)
+.
+JdbcResultSet
+Methods
+Method
+Return type
+Brief description
+absolute(row)
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#absolute(int)
+.
+afterLast()
+void
+For documentation of this method, see
+java.sql.ResultSet#afterLast()
+.
+beforeFirst()
+void
+For documentation of this method, see
+java.sql.ResultSet#beforeFirst()
+.
+cancelRowUpdates()
+void
+For documentation of this method, see
+java.sql.ResultSet#cancelRowUpdates()
+.
+clearWarnings()
+void
+For documentation of this method, see
+java.sql.ResultSet#clearWarnings()
+.
+close()
+void
+For documentation of this method, see
+java.sql.ResultSet#close()
+.
+deleteRow()
+void
+For documentation of this method, see
+java.sql.ResultSet#deleteRow()
+.
+findColumn(columnLabel)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#findColumn(String)
+.
+first()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#first()
+.
+getArray(columnIndex)
+JdbcArray
+For documentation of this method, see
+java.sql.ResultSet#getArray(int)
+.
+getArray(columnLabel)
+JdbcArray
+For documentation of this method, see
+java.sql.ResultSet#getArray(String)
+.
+getBigDecimal(columnIndex)
+BigNumber
+For documentation of this method, see
+java.sql.ResultSet#getBigDecimal(int)
+.
+getBigDecimal(columnLabel)
+BigNumber
+For documentation of this method, see
+java.sql.ResultSet#getBigDecimal(String)
+.
+getBlob(columnIndex)
+JdbcBlob
+For documentation of this method, see
+java.sql.ResultSet#getBlob(int)
+.
+getBlob(columnLabel)
+JdbcBlob
+For documentation of this method, see
+java.sql.ResultSet#getBlob(String)
+.
+getBoolean(columnIndex)
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#getBoolean(int)
+.
+getBoolean(columnLabel)
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#getBoolean(String)
+.
+getByte(columnIndex)
+Byte
+For documentation of this method, see
+java.sql.ResultSet#getByte(int)
+.
+getByte(columnLabel)
+Byte
+For documentation of this method, see
+java.sql.ResultSet#getByte(String)
+.
+getBytes(columnIndex)
+Byte[]
+For documentation of this method, see
+java.sql.ResultSet#getBytes(int)
+.
+getBytes(columnLabel)
+Byte[]
+For documentation of this method, see
+java.sql.ResultSet#getBytes(String)
+.
+getClob(columnIndex)
+JdbcClob
+For documentation of this method, see
+java.sql.ResultSet#getClob(int)
+.
+getClob(columnLabel)
+JdbcClob
+For documentation of this method, see
+java.sql.ResultSet#getClob(String)
+.
+getConcurrency()
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getConcurrency()
+.
+getCursorName()
+String
+For documentation of this method, see
+java.sql.ResultSet#getCursorName()
+.
+getDate(columnIndex)
+JdbcDate
+For documentation of this method, see
+java.sql.ResultSet#getDate(int)
+.
+getDate(columnIndex, timeZone)
+JdbcDate
+For documentation of this method, see
+java.sql.ResultSet#getDate(int, Calendar)
+.
+getDate(columnLabel)
+JdbcDate
+For documentation of this method, see
+java.sql.ResultSet#getDate(String)
+.
+getDate(columnLabel, timeZone)
+JdbcDate
+For documentation of this method, see
+java.sql.ResultSet#getDate(String, Calendar)
+.
+getDouble(columnIndex)
+Number
+For documentation of this method, see
+java.sql.ResultSet#getDouble(int)
+.
+getDouble(columnLabel)
+Number
+For documentation of this method, see
+java.sql.ResultSet#getDouble(String)
+.
+getFetchDirection()
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getFetchDirection()
+.
+getFetchSize()
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getFetchSize()
+.
+getFloat(columnIndex)
+Number
+For documentation of this method, see
+java.sql.ResultSet#getFloat(int)
+.
+getFloat(columnLabel)
+Number
+For documentation of this method, see
+java.sql.ResultSet#getFloat(String)
+.
+getHoldability()
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getHoldability()
+.
+getInt(columnIndex)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getInt(int)
+.
+getInt(columnLabel)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getInt(String)
+.
+getLong(columnIndex)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getLong(int)
+.
+getLong(columnLabel)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getLong(String)
+.
+getMetaData()
+JdbcResultSetMetaData
+For documentation of this method, see
+java.sql.ResultSet#getMetaData()
+.
+getNClob(columnIndex)
+JdbcClob
+For documentation of this method, see
+java.sql.ResultSet#getNClob(int)
+.
+getNClob(columnLabel)
+JdbcClob
+For documentation of this method, see
+java.sql.ResultSet#getNClob(String)
+.
+getNString(columnIndex)
+String
+For documentation of this method, see
+java.sql.ResultSet#getNString(int)
+.
+getNString(columnLabel)
+String
+For documentation of this method, see
+java.sql.ResultSet#getNString(String)
+.
+getObject(columnIndex)
+Object
+For documentation of this method, see
+java.sql.ResultSet#getObject(int)
+.
+getObject(columnLabel)
+Object
+For documentation of this method, see
+java.sql.ResultSet#getObject(String)
+.
+getRef(columnIndex)
+JdbcRef
+For documentation of this method, see
+java.sql.ResultSet#getRef(int)
+.
+getRef(columnLabel)
+JdbcRef
+For documentation of this method, see
+java.sql.ResultSet#getRef(String)
+.
+getRow()
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getRow()
+.
+getRowId(columnIndex)
+JdbcRowId
+For documentation of this method, see
+java.sql.ResultSet#getRowId(int)
+.
+getRowId(columnLabel)
+JdbcRowId
+For documentation of this method, see
+java.sql.ResultSet#getRowId(String)
+.
+getRows(queryString)
+Object[][]
+Returns all the rows from this
+ResultSet
+object.
+getRows(queryString, batchSize)
+Object[][]
+Returns up to
+batchSize
+rows from this
+ResultSet
+object.
+getSQLXML(columnIndex)
+JdbcSQLXML
+For documentation of this method, see
+java.sql.ResultSet#getSQLXML(int)
+.
+getSQLXML(columnLabel)
+JdbcSQLXML
+For documentation of this method, see
+java.sql.ResultSet#getSQLXML(String)
+.
+getShort(columnIndex)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getShort(int)
+.
+getShort(columnLabel)
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getShort(String)
+.
+getStatement()
+JdbcStatement
+For documentation of this method, see
+java.sql.ResultSet#getStatement()
+.
+getString(columnIndex)
+String
+For documentation of this method, see
+java.sql.ResultSet#getString(int)
+.
+getString(columnLabel)
+String
+For documentation of this method, see
+java.sql.ResultSet#getString(String)
+.
+getTime(columnIndex)
+JdbcTime
+For documentation of this method, see
+java.sql.ResultSet#getTime(int)
+.
+getTime(columnIndex, timeZone)
+JdbcTime
+For documentation of this method, see
+java.sql.ResultSet#getTime(int, Calendar)
+.
+getTime(columnLabel)
+JdbcTime
+For documentation of this method, see
+java.sql.ResultSet#getTime(String)
+.
+getTime(columnLabel, timeZone)
+JdbcTime
+For documentation of this method, see
+java.sql.ResultSet#getTime(String, Calendar)
+.
+getTimestamp(columnIndex)
+JdbcTimestamp
+For documentation of this method, see
+java.sql.ResultSet#getTimestamp(int)
+.
+getTimestamp(columnIndex, timeZone)
+JdbcTimestamp
+For documentation of this method, see
+java.sql.ResultSet#getTimestamp(int, Calendar)
+.
+getTimestamp(columnLabel)
+JdbcTimestamp
+For documentation of this method, see
+java.sql.ResultSet#getTimestamp(String)
+.
+getTimestamp(columnLabel, timeZone)
+JdbcTimestamp
+For documentation of this method, see
+java.sql.ResultSet#getTimestamp(String, Calendar)
+.
+getType()
+Integer
+For documentation of this method, see
+java.sql.ResultSet#getType()
+.
+getURL(columnIndex)
+String
+For documentation of this method, see
+java.sql.ResultSet#getURL(int)
+.
+getURL(columnLabel)
+String
+For documentation of this method, see
+java.sql.ResultSet#getURL(String)
+.
+getWarnings()
+String[]
+Returns the current set of warnings reported by the driver.
+insertRow()
+void
+For documentation of this method, see
+java.sql.ResultSet#insertRow()
+.
+isAfterLast()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#isAfterLast()
+.
+isBeforeFirst()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#isBeforeFirst()
+.
+isClosed()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#isClosed()
+.
+isFirst()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#isFirst()
+.
+isLast()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#isLast()
+.
+last()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#first()
+.
+moveToCurrentRow()
+void
+For documentation of this method, see
+java.sql.ResultSet#moveToCurrentRow()
+.
+moveToInsertRow()
+void
+For documentation of this method, see
+java.sql.ResultSet#moveToInsertRow()
+.
+next()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#next()
+.
+previous()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#previous()
+.
+refreshRow()
+void
+For documentation of this method, see
+java.sql.ResultSet#refreshRow()
+.
+relative(rows)
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#relative(int)
+.
+rowDeleted()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#rowDeleted()
+.
+rowInserted()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#rowInserted()
+.
+rowUpdated()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#rowUpdated()
+.
+setFetchDirection(direction)
+void
+For documentation of this method, see
+java.sql.ResultSet#setFetchDirection(int)
+.
+setFetchSize(rows)
+void
+For documentation of this method, see
+java.sql.ResultSet#setFetchSize(int)
+.
+updateArray(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateArray(int, Array)
+.
+updateArray(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateArray(String, Array)
+.
+updateBigDecimal(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBigDecimal(int, BigDecimal)
+.
+updateBigDecimal(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBigDecimal(String, BigDecimal)
+.
+updateBlob(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBlob(int, Blob)
+.
+updateBlob(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateRef(String, Blob)
+.
+updateBoolean(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBoolean(int, boolean)
+.
+updateBoolean(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBoolean(String, boolean)
+.
+updateByte(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateByte(int, byte)
+.
+updateByte(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateByte(String, byte)
+.
+updateBytes(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBytes(int, byte[])
+.
+updateBytes(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateBytes(String, byte[])
+.
+updateClob(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateClob(int, Clob)
+.
+updateClob(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateClob(String, Clob)
+.
+updateDate(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateDate(int, Date)
+.
+updateDate(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateDate(String, Date)
+.
+updateDouble(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateDouble(int, double)
+.
+updateDouble(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateDouble(String, double)
+.
+updateFloat(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateFloat(int, float)
+.
+updateFloat(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateFloat(String, float)
+.
+updateInt(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateInt(int, int)
+.
+updateInt(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateInt(String, int)
+.
+updateLong(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateLong(int, long)
+.
+updateLong(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateLong(String, long)
+.
+updateNClob(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateNClob(int, NClob)
+.
+updateNClob(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateNClob(String, NClob)
+.
+updateNString(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateNString(int, String)
+.
+updateNString(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateNString(String, String)
+.
+updateNull(columnIndex)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateNull(int)
+.
+updateNull(columnLabel)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateNull(String)
+.
+updateObject(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateObject(int, Object)
+.
+updateObject(columnIndex, x, scaleOrLength)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateObject(int, Object, int)
+.
+updateObject(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateObject(String, Object)
+.
+updateObject(columnLabel, x, scaleOrLength)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateObject(String, Object, int)
+.
+updateRef(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateRef(int, Ref)
+.
+updateRef(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateRef(String, Ref)
+.
+updateRow()
+void
+For documentation of this method, see
+java.sql.ResultSet#updateRow()
+.
+updateRowId(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateRowId(int, RowId)
+.
+updateRowId(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateRowId(String, RowId)
+.
+updateSQLXML(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateSQLXML(int, SQLXML)
+.
+updateSQLXML(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateSQLXML(String, SQLXML)
+.
+updateShort(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateShort(int, short)
+.
+updateShort(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateShort(String, short)
+.
+updateString(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateString(int, String)
+.
+updateString(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateString(String, String)
+.
+updateTime(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateTime(int, Time)
+.
+updateTime(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateTime(String, Time)
+.
+updateTimestamp(columnIndex, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateTimestamp(int, Timestamp)
+.
+updateTimestamp(columnLabel, x)
+void
+For documentation of this method, see
+java.sql.ResultSet#updateTimestamp(String, Timestamp)
+.
+wasNull()
+Boolean
+For documentation of this method, see
+java.sql.ResultSet#wasNull()
+.
+JdbcResultSetMetaData
+Methods
+Method
+Return type
+Brief description
+getCatalogName(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getCatalogName(int)
+.
+getColumnClassName(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnClassName(int)
+.
+getColumnCount()
+Integer
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnCount()
+.
+getColumnDisplaySize(column)
+Integer
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnDisplaySize(int)
+.
+getColumnLabel(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnLabel(int)
+.
+getColumnName(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnName(int)
+.
+getColumnType(column)
+Integer
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnType(int)
+.
+getColumnTypeName(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getColumnTypeName(int)
+.
+getPrecision(column)
+Integer
+For documentation of this method, see
+java.sql.ResultSetMetaData#getPrecision(int)
+.
+getScale(column)
+Integer
+For documentation of this method, see
+java.sql.ResultSetMetaData#getScale(int)
+.
+getSchemaName(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getSchemaName(int)
+.
+getTableName(column)
+String
+For documentation of this method, see
+java.sql.ResultSetMetaData#getTableName(int)
+.
+isAutoIncrement(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isAutoIncrement(int)
+.
+isCaseSensitive(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isCaseSensitive(int)
+.
+isCurrency(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isCurrency(int)
+.
+isDefinitelyWritable(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isDefinitelyWritable(int)
+.
+isNullable(column)
+Integer
+For documentation of this method, see
+java.sql.ResultSetMetaData#isNullable(int)
+.
+isReadOnly(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isReadOnly(int)
+.
+isSearchable(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isSearchable(int)
+.
+isSigned(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isSigned(int)
+.
+isWritable(column)
+Boolean
+For documentation of this method, see
+java.sql.ResultSetMetaData#isWritable(int)
+.
+JdbcRowId
+Methods
+Method
+Return type
+Brief description
+getBytes()
+Byte[]
+For documentation of this method, see
+java.sql.RowId#getBytes()
+.
+JdbcSQLXML
+Methods
+Method
+Return type
+Brief description
+free()
+void
+For documentation of this method, see
+java.sql.SQLXML#free()
+.
+getString()
+String
+For documentation of this method, see
+java.sql.SQLXML#getString()
+.
+setString(value)
+void
+For documentation of this method, see
+java.sql.SQLXML#setString(String)
+.
+JdbcSavepoint
+Methods
+Method
+Return type
+Brief description
+getSavepointId()
+Integer
+For documentation of this method, see
+java.sql.Savepoint#getSavepointId()
+.
+getSavepointName()
+String
+For documentation of this method, see
+java.sql.Savepoint#getSavepointName()
+.
+JdbcStatement
+Methods
+Method
+Return type
+Brief description
+addBatch(sql)
+void
+For documentation of this method, see
+java.sql.Statement#addBatch(String)
+.
+cancel()
+void
+For documentation of this method, see
+java.sql.Statement#cancel()
+.
+clearBatch()
+void
+For documentation of this method, see
+java.sql.Statement#clearBatch()
+.
+clearWarnings()
+void
+For documentation of this method, see
+java.sql.Statement#clearWarnings()
+.
+close()
+void
+For documentation of this method, see
+java.sql.Statement#close()
+.
+execute(sql)
+Boolean
+For documentation of this method, see
+java.sql.Statement#execute(String)
+.
+execute(sql, autoGeneratedKeys)
+Boolean
+For documentation of this method, see
+java.sql.Statement#execute(String, int)
+.
+execute(sql, columnIndexes)
+Boolean
+For documentation of this method, see
+java.sql.Statement#execute(String, int[])
+.
+execute(sql, columnNames)
+Boolean
+For documentation of this method, see
+java.sql.Statement#execute(String, String[])
+.
+executeBatch()
+Integer[]
+For documentation of this method, see
+java.sql.Statement#executeBatch()
+.
+executeQuery(sql)
+JdbcResultSet
+For documentation of this method, see
+java.sql.Statement#executeQuery(String)
+.
+executeUpdate(sql)
+Integer
+For documentation of this method, see
+java.sql.Statement#executeUpdate(String)
+.
+executeUpdate(sql, autoGeneratedKeys)
+Integer
+For documentation of this method, see
+java.sql.Statement#executeUpdate(String, int)
+.
+executeUpdate(sql, columnIndexes)
+Integer
+For documentation of this method, see
+java.sql.Statement#executeUpdate(String, int[])
+.
+executeUpdate(sql, columnNames)
+Integer
+For documentation of this method, see
+java.sql.Statement#executeUpdate(String, String[])
+.
+getConnection()
+JdbcConnection
+For documentation of this method, see
+java.sql.Statement#getConnection()
+.
+getFetchDirection()
+Integer
+For documentation of this method, see
+java.sql.Statement#getFetchDirection()
+.
+getFetchSize()
+Integer
+For documentation of this method, see
+java.sql.Statement#getFetchSize()
+.
+getGeneratedKeys()
+JdbcResultSet
+For documentation of this method, see
+java.sql.Statement#getGeneratedKeys()
+.
+getMaxFieldSize()
+Integer
+For documentation of this method, see
+java.sql.Statement#getMaxFieldSize()
+.
+getMaxRows()
+Integer
+For documentation of this method, see
+java.sql.Statement#getMaxRows()
+.
+getMoreResults()
+Boolean
+For documentation of this method, see
+java.sql.Statement#getMoreResults()
+.
+getMoreResults(current)
+Boolean
+For documentation of this method, see
+java.sql.Statement#getMoreResults(int)
+.
+getQueryTimeout()
+Integer
+For documentation of this method, see
+java.sql.Statement#getQueryTimeout()
+.
+getResultSet()
+JdbcResultSet
+For documentation of this method, see
+java.sql.Statement#getResultSet()
+.
+getResultSetConcurrency()
+Integer
+For documentation of this method, see
+java.sql.Statement#getResultSetConcurrency()
+.
+getResultSetHoldability()
+Integer
+For documentation of this method, see
+java.sql.Statement#getResultSetHoldability()
+.
+getResultSetType()
+Integer
+For documentation of this method, see
+java.sql.Statement#getResultSetType()
+.
+getUpdateCount()
+Integer
+For documentation of this method, see
+java.sql.Statement#getUpdateCount()
+.
+getWarnings()
+String[]
+For documentation of this method, see
+java.sql.Statement#getWarnings()
+.
+isClosed()
+Boolean
+For documentation of this method, see
+java.sql.Statement#isClosed()
+.
+isPoolable()
+Boolean
+For documentation of this method, see
+java.sql.Statement#isPoolable()
+.
+setCursorName(name)
+void
+For documentation of this method, see
+java.sql.Statement#setCursorName(String)
+.
+setEscapeProcessing(enable)
+void
+For documentation of this method, see
+java.sql.Statement#setEscapeProcessing(boolean)
+.
+setFetchDirection(direction)
+void
+For documentation of this method, see
+java.sql.Statement#setFetchDirection(int)
+.
+setFetchSize(rows)
+void
+For documentation of this method, see
+java.sql.Statement#setFetchSize(int)
+.
+setMaxFieldSize(max)
+void
+For documentation of this method, see
+java.sql.Statement#setMaxFieldSize(int)
+.
+setMaxRows(max)
+void
+For documentation of this method, see
+java.sql.Statement#setMaxRows(int)
+.
+setPoolable(poolable)
+void
+For documentation of this method, see
+java.sql.Statement#setPoolable(boolean)
+.
+setQueryTimeout(seconds)
+void
+For documentation of this method, see
+java.sql.Statement#setQueryTimeout(int)
+.
+JdbcStruct
+Methods
+Method
+Return type
+Brief description
+getAttributes()
+Object[]
+For documentation of this method, see
+java.sql.Struct#getAttributes()
+.
+getSQLTypeName()
+String
+For documentation of this method, see
+java.sql.Struct#getSQLTypeName()
+.
+JdbcTime
+Methods
+Method
+Return type
+Brief description
+after(when)
+Boolean
+For documentation of this method, see
+java.sql.Date#after(Date)
+.
+before(when)
+Boolean
+For documentation of this method, see
+java.sql.Date#before(Date)
+.
+getHours()
+Integer
+For documentation of this method, see
+java.sql.Date#getHours()
+.
+getMinutes()
+Integer
+For documentation of this method, see
+java.sql.Date#getMinutes()
+.
+getSeconds()
+Integer
+For documentation of this method, see
+java.sql.Date#getSeconds()
+.
+getTime()
+Integer
+For documentation of this method, see
+java.sql.Date#getTime()
+.
+setHours(hours)
+void
+For documentation of this method, see
+java.sql.Date#setHours(int)
+.
+setMinutes(minutes)
+void
+For documentation of this method, see
+java.sql.Date#setMinutes(int)
+.
+setSeconds(seconds)
+void
+For documentation of this method, see
+java.sql.Date#setSeconds(int)
+.
+setTime(milliseconds)
+void
+For documentation of this method, see
+java.sql.Time#setTime(long)
+.
+JdbcTimestamp
+Methods
+Method
+Return type
+Brief description
+after(when)
+Boolean
+For documentation of this method, see
+java.sql.Timestamp#after(Timestamp)
+.
+before(when)
+Boolean
+For documentation of this method, see
+java.sql.Timestamp#before(Timestamp)
+.
+getDate()
+Integer
+For documentation of this method, see
+java.sql.Date#getDate()
+.
+getHours()
+Integer
+For documentation of this method, see
+java.sql.Date#getHours()
+.
+getMinutes()
+Integer
+For documentation of this method, see
+java.sql.Date#getMinutes()
+.
+getMonth()
+Integer
+For documentation of this method, see
+java.sql.Date#getMonth()
+.
+getNanos()
+Integer
+For documentation of this method, see
+java.sql.Timestamp#getNanos()
+.
+getSeconds()
+Integer
+For documentation of this method, see
+java.sql.Date#getSeconds()
+.
+getTime()
+Integer
+For documentation of this method, see
+java.sql.Timestamp#getTime()
+.
+getYear()
+Integer
+For documentation of this method, see
+java.sql.Date#getYear()
+.
+setDate(date)
+void
+For documentation of this method, see
+java.sql.Date#setDate(int)
+.
+setHours(hours)
+void
+For documentation of this method, see
+java.sql.Date#setHours(int)
+.
+setMinutes(minutes)
+void
+For documentation of this method, see
+java.sql.Date#setMinutes(int)
+.
+setMonth(month)
+void
+For documentation of this method, see
+java.sql.Date#setMonth(int)
+.
+setNanos(nanoseconds)
+void
+For documentation of this method, see
+java.sql.Timestamp#setNanos(int)
+.
+setSeconds(seconds)
+void
+For documentation of this method, see
+java.sql.Date#setSeconds(int)
+.
+setTime(milliseconds)
+void
+For documentation of this method, see
+java.sql.Timestamp#setTime(long)
+.
+setYear(year)
+void
+For documentation of this method, see
+java.sql.Date#setYear(int)
+.
