@@ -1,34 +1,36 @@
-name: Build RAG Store
+name: Build RAG
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
 
-      - name: Build RAG Store
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python setup_rag_store.py
+      - name: Run RAG builder
+        run: |
+          python src/main.py
 
-      - name: Upload FAISS Store
-        uses: actions/upload-artifact@v3
+      - name: Upload output artifacts
+        uses: actions/upload-artifact@v4
         with:
-          name: rag_store
-          path: rag_store
+          name: rag-output
+          path: output/**
+          if-no-files-found: warn
+
