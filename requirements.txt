@@ -1,0 +1,12 @@
+# requirements.txt
+
+# Gemini APIを操作するためのGoogle公式SDK
+google-genai
+
+# .envファイルから環境変数を読み込むためのライブラリ
+python-dotenv
+
+# WebスクレイピングとHTML解析のためのライブラリ
+requests
+beautifulsoup4
+lxml

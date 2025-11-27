@@ -1,0 +1,474 @@
+以下のアプリ群の使い方について、README.mdを書いて
+
+
+---
+
+
+- フォルダ名: .
+- ファイル名: local_html2text.py
+- 内容:
+# local_html2text.py (【最終修正版】)
+import os
+import sys
+from bs4 import BeautifulSoup
+import glob
+
+def convert_html_to_text(html_dir, output_dir):
+    """
+    指定されたディレクトリ内のHTMLファイルをテキストに変換して保存する。
+    ディレクトリ構造を反映したユニークなファイル名を生成する。
+    """
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    search_path = os.path.join(html_dir, '**', '*.html')
+    html_files = glob.glob(search_path, recursive=True)
+
+    if not html_files:
+        print(f"HTMLファイルが見つかりませんでした。ディレクトリ '{html_dir}' を確認してください。")
+        return
+
+    print(f"{len(html_files)} 個のHTMLファイルを処理します...")
+
+    for html_path in html_files:
+        try:
+            with open(html_path, 'r', encoding='utf-8') as f:
+                soup = BeautifulSoup(f.read(), 'lxml')
+
+            content_div = soup.find('div', attrs={'class': 'devsite-article-body'})
+            
+            if content_div:
+                # ▼▼▼【ここからが修正箇所】▼▼▼
+                
+                # 1. 入力ディレクトリからの相対パスを取得
+                # 例: 'reference/spreadsheet/index.html'
+                relative_path = os.path.relpath(html_path, html_dir)
+
+                # 2. 拡張子を取り除き、ディレクトリ区切り文字をハイフンに置換
+                # 例: 'reference-spreadsheet-index'
+                base_name_without_ext = os.path.splitext(relative_path)[0]
+                unique_base_name = base_name_without_ext.replace(os.sep, '-')
+
+                # 3. 新しいファイル名を作成
+                # 例: 'reference-spreadsheet-index.txt'
+                output_filename = f"{unique_base_name}.txt"
+                output_path = os.path.join(output_dir, output_filename)
+                
+                # ▲▲▲【ここまでが修正箇所】▲▲▲
+                
+                with open(output_path, 'w', encoding='utf-8') as out_f:
+                    out_f.write(f"Source Path: {html_path}\n\n")
+                    out_f.write(content_div.get_text(separator='\n', strip=True))
+                
+                print(f"変換完了: {output_path}")
+
+        except Exception as e:
+            print(f"エラーが発生しました ({html_path}): {e}")
+
+# --- GitHub Actions と ローカル実行の両方に対応 ---
+if __name__ == "__main__":
+    if len(sys.argv) == 3:
+        input_dir = sys.argv[1]
+        output_dir = sys.argv[2]
+        print(f"--- Processing files from '{input_dir}' to '{output_dir}' (from command line) ---")
+        convert_html_to_text(input_dir, output_dir)
+    else:
+        print("--- Running with default settings for local testing ---")
+        
+        # --- ローカルでテスト実行したい場合の設定 ---
+        # 既存のテキストフォルダを一度削除すると確実です
+        if os.path.exists('gas_docs_txt'):
+             import shutil
+             shutil.rmtree('gas_docs_txt')
+        if os.path.exists('gemini_api_docs_txt'):
+             import shutil
+             shutil.rmtree('gemini_api_docs_txt')
+
+        # GAS
+        convert_html_to_text('gas_docs_html', 'gas_docs_txt')
+        # Gemini API
+        convert_html_to_text('gemini_api_docs_html', 'gemini_api_docs_txt')
+
+
+---
+
+
+- フォルダ名: .
+- ファイル名: py_wget.py
+- 内容:
+# py_wget.py
+import os
+import time
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin, urlparse
+
+def recursive_download(start_url, output_dir, allowed_domain, wait_time=1):
+    """
+    指定されたURLから再帰的にHTMLファイルをダウンロードする関数。
+    wget --recursive --no-parent --accept=html と似た動作をします。
+    """
+    urls_to_visit = {start_url}
+    visited_urls = set()
+
+    # 出力ディレクトリがなければ作成
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    # 訪問すべきURLがなくなるまでループ
+    while urls_to_visit:
+        current_url = urls_to_visit.pop()
+
+        if current_url in visited_urls:
+            continue
+
+        print(f"訪問中: {current_url}")
+        visited_urls.add(current_url)
+
+        try:
+            # ページを取得
+            response = requests.get(current_url, headers={'User-Agent': 'Mozilla/5.0'})
+            response.raise_for_status() # エラーがあれば例外を発生
+        except requests.exceptions.RequestException as e:
+            print(f"  エラー: スキップします ({e})")
+            continue
+
+        # HTMLを解析
+        soup = BeautifulSoup(response.content, 'lxml')
+
+        # --- ファイルの保存ロジック ---
+        # URLのパス部分からローカルのファイルパスを構築
+        parsed_url = urlparse(current_url)
+        # 先頭のスラッシュを削除
+        local_path = parsed_url.path.lstrip('/')
+        # ファイル名がなければ index.html とする
+        if local_path.endswith('/'):
+            local_path += "index.html"
+        elif not os.path.splitext(local_path)[1]: # 拡張子がない場合
+             local_path += "/index.html"
+        
+        file_path = os.path.join(output_dir, local_path)
+        
+        # 保存先のディレクトリを作成
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        
+        # ファイルを保存
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(response.text)
+        print(f"  保存先: {file_path}")
+
+        # --- 新しいリンクの探索ロジック ---
+        # ページ内のすべての<a>タグ（リンク）を探す
+        for link in soup.find_all('a', href=True):
+            href = link['href']
+            # 相対URLを絶対URLに変換 (例: "../page.html" -> "https://.../page.html")
+            new_url = urljoin(current_url, href)
+            
+            # URLから#以降のアンカーを削除 (例: "...page.html#section1" -> "...page.html")
+            new_url = new_url.split('#')[0]
+
+            # --- ルールに合致するかチェック ---
+            # 1. 許可されたドメインか？ (--domains)
+            # 2. スタートURLのパス配下か？ (--no-parent)
+            # 3. まだ訪問していないか？
+            # 4. HTMLファイルか？ (拡張子なし or .html) (--accept=html)
+            if (urlparse(new_url).netloc == allowed_domain and
+                new_url.startswith(start_url) and
+                new_url not in visited_urls and
+                (not os.path.splitext(urlparse(new_url).path)[1] or 
+                 os.path.splitext(urlparse(new_url).path)[1] == '.html')):
+                
+                urls_to_visit.add(new_url)
+
+        # サーバーに負荷をかけないように待機 (--wait)
+        time.sleep(wait_time)
+
+    print("\nダウンロードが完了しました。")
+
+
+if __name__ == "__main__":
+    # --- ここでダウンロードしたいサイトの設定を切り替える ---
+    # 【設定1】Google Apps Scriptのドキュメントをダウンロードする場合
+
+    print("--- Google Apps Script ドキュメントのダウンロードを開始します ---")
+    recursive_download(
+        start_url="https://developers.google.com/apps-script/reference/",
+        output_dir="gas_docs_html",
+        allowed_domain="developers.google.com"
+    )
+
+    print("\n" + "="*50 + "\n")
+
+    # 【設定2】Gemini APIのドキュメントをダウンロードする場合
+    print("--- Gemini API ドキュメントのダウンロードを開始します ---")
+    recursive_download(
+        start_url="https://ai.google.dev/gemini-api/docs/",
+        output_dir="gemini_api_docs_html",
+        allowed_domain="ai.google.dev"
+    )
+
+
+---
+
+
+- フォルダ名: .
+- ファイル名: query_rag.py
+- 内容:
+# query_rag.py (事前判定機能付き)
+import os
+from google import genai
+from google.genai import types
+from dotenv import load_dotenv
+
+# --- .envファイルから環境変数を読み込む ---
+load_dotenv()
+api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+    raise ValueError("APIキーが.envファイルに設定されていません。")
+client = genai.Client(api_key=api_key) 
+
+# --- ストア名を設定 ---
+FILE_SEARCH_STORE_NAME = "fileSearchStores/gas-documentation-rag-store-tkp78e76eio6" # あなたのストア名に設定済み
+
+# ▼▼▼【ここからが新しい関数】▼▼▼
+def is_question_about_gas(question: str) -> bool:
+    """
+    質問がGoogle Apps Scriptに関連しているかどうかを判定する関数
+    """
+    print("  - 質問内容を判定中...")
+    try:
+        # 判定用のシンプルなプロンプト
+        prompt = f"""
+        以下のユーザーからの質問は、プログラミング言語の「Google Apps Script (GAS)」に関連する内容ですか？
+        関連している場合は "Yes"、関連していない場合は "No" とだけ答えてください。
+
+        質問: "{question}"
+        """
+        
+        # 高速なモデルで判定
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt,
+            config=types.GenerateContentConfig(temperature=0) # 創造性はいらないので温度を0に
+        )
+        
+        # 回答が"Yes"を含んでいるかどうかで判定
+        print(f"  - 判定結果: {response.text.strip()}")
+        return "yes" in response.text.lower()
+    except Exception as e:
+        print(f"  - 判定中にエラーが発生しました: {e}")
+        return False # エラー時は安全側に倒し、処理を続行しない
+# ▲▲▲【ここまでが新しい関数】▲▲▲
+
+if FILE_SEARCH_STORE_NAME == "ここにストア名を貼り付け":
+    print("エラー: `FILE_SEARCH_STORE_NAME`に変数を設定してください。")
+else:
+    question = input("GASに関する質問を入力してください (終了するには Enter のみ): ")
+    
+    while question:
+        # ▼▼▼【ここからが新しいロジック】▼▼▼
+        if is_question_about_gas(question):
+            # 質問がGASに関連している場合のみ、RAGを実行
+            print("\n🤖 AIが回答を生成中...")
+            response = client.models.generate_content(
+                model="gemini-2.5-flash",
+                contents=question,
+                config=types.GenerateContentConfig(
+                    tools=[
+                        types.Tool(
+                            file_search=types.FileSearch(
+                                file_search_store_names=[FILE_SEARCH_STORE_NAME]
+                            )
+                        )
+                    ]
+                )
+            )
+            print("\n--- 回答 ---")
+            print(response.text)
+            #print("\n--- 引用元情報 ---")
+            #print(response.candidates[0].grounding_metadata)
+            ###
+            # grounding_metadataオブジェクトを取得
+            metadata = response.candidates[0].grounding_metadata
+            if metadata:
+                print("\n--- 引用元の詳細 ---")
+                for i, chunk in enumerate(metadata.grounding_chunks):
+                    source_file = chunk.retrieved_context.title
+                    retrieved_text = chunk.retrieved_context.text
+                    print(f"\n【引用 {i+1}】")
+                    print(f"  ファイル名: {source_file}")
+                    print(f"  内容の冒頭: {retrieved_text[:100]}...")
+            else:
+                # 引用元が見つからなかった場合（RAGが機能しなかった場合）
+                print("\n--- 引用元情報 ---")
+                print("  (この回答はアップロードされたドキュメントからは引用されていません)")
+
+            ###
+        else:
+            # 質問がGASに関係ない場合は、定型文を返す
+            print("\n--- 回答 ---")
+            print("申し訳ありませんが、私はGoogle Apps Scriptに関する質問にのみお答えできます。")
+        # ▲▲▲【ここまでが新しいロジック】▲▲▲
+            
+        question = input("\n次の質問をどうぞ (終了するには Enter のみ): ")
+
+print("プログラムを終了します。")
+
+
+---
+
+
+- フォルダ名: .
+- ファイル名: requirements.txt
+- 内容:
+# requirements.txt
+
+# Gemini APIを操作するためのGoogle公式SDK
+google-genai
+
+# .envファイルから環境変数を読み込むためのライブラリ
+python-dotenv
+
+# WebスクレイピングとHTML解析のためのライブラリ
+requests
+beautifulsoup4
+lxml
+
+
+---
+
+
+- フォルダ名: .
+- ファイル名: setup_rag_store.py
+- 内容:
+# setup_rag_store.py (【最終修正版】)
+import os
+import time
+from google import genai
+from dotenv import load_dotenv
+
+# --- .envファイルから環境変数を読み込む ---
+load_dotenv()
+
+# --- 環境変数からAPIキーを取得 ---
+api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+    raise ValueError("APIキーが.envファイルに設定されていません。'GEMINI_API_KEY=...'と記述してください。")
+
+# --- Clientオブジェクトを作成 ---
+client = genai.Client(api_key=api_key) 
+doc_directory = "gas_docs_txt"
+
+# --- 1. ファイル検索ストアの作成 ---
+print("ファイル検索ストアを作成しています...")
+file_search_store = client.file_search_stores.create(
+    config={'display_name': 'GAS Documentation RAG Store (new SDK)'}
+)
+
+# --- 2. ディレクトリ内の全テキストファイルをアップロード ---
+print(f"'{doc_directory}' ディレクトリからファイルのアップロードを開始します...")
+for filename in os.listdir(doc_directory):
+    if filename.endswith(".txt"):
+        file_path = os.path.join(doc_directory, filename)
+        print(f"  - アップロード中: {filename}")
+        
+        # 最初のアップロード操作を開始
+        operation = client.file_search_stores.upload_to_file_search_store(
+            file=file_path,
+            file_search_store_name=file_search_store.name,
+            config={'display_name': filename}
+        )
+        
+        # ▼▼▼【ここからが修正箇所】▼▼▼
+
+        # 操作が完了するまでループ (公式ドキュメントに準拠したシンプルな形式)
+        while not operation.done:
+            print("    - 処理中...")
+            time.sleep(5)
+            
+            # operationオブジェクト自体を渡して、最新の状態を取得する
+            operation = client.operations.get(operation)
+
+        # ▲▲▲【ここまでが修正箇所】▲▲▲
+
+print("\n✅ すべてのファイルのアップロードとインデックス作成が完了しました。")
+print("\n🎉 RAGシステムの準備が完了しました！")
+print("以下のストア名（ID）をコピーして、質問用スクリプトに貼り付けてください。")
+print("--------------------------------------------------")
+print(file_search_store.name)
+print("--------------------------------------------------")
+
+
+---
+
+
+- フォルダ名: ./.github/workflows
+- ファイル名: update-docs.yml
+- 内容:
+# .github/workflows/update-docs.yml
+
+name: Update Documentation Files
+
+# ワークフローの実行トリガー
+on:
+  # 1. 手動実行を可能にする (Actionsタブの "Run workflow" ボタン)
+  workflow_dispatch:
+
+# ワークフローが実行する一連のジョブ
+jobs:
+  update-docs-job:
+    # 実行環境の指定 (最新のUbuntuを使用)
+    runs-on: ubuntu-latest
+
+    # ジョブの各ステップ
+    steps:
+      # ステップ1: リポジトリのコードをチェックアウトする
+      # これにより、GitHub Actionsの実行環境にあなたのコードがコピーされる
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ステップ2: Python環境のセットアップ
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11' # 使用するPythonのバージョン
+
+      # ステップ3: 必要なPythonライブラリをインストールする
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ステップ4: ドキュメントをダウンロードするスクリプトを実行する
+      # py_wget.py を実行して、HTMLファイルをダウンロード
+      - name: Download documentation HTML files
+        run: python py_wget.py
+
+      # ステップ5: HTMLをテキストに変換するスクリプトを実行する
+      # local_html2text.py を実行して、TXTファイルを生成
+      - name: Convert HTML to Text
+        run: |
+          # GASドキュメント、gemini APIドキュメントの変換
+          python local_html2text.py
+
+      # ステップ6: 変更があった場合にコミット＆プッシュする
+      - name: Commit and push if there are changes
+        run: |
+          # Gitのユーザー設定
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # 変更をステージング
+          # 生成されたTXTファイルと、ダウンロードしたHTMLファイルの両方を対象にする
+          git add gas_docs_txt/ gemini_api_docs_txt/ gas_docs_html/ gemini_api_docs_html/
+          
+          # 変更があるかどうかを確認
+          # git diff --staged --quiet は変更がなければ終了コード0、あれば1を返す
+          if ! git diff --staged --quiet; then
+            # 変更がある場合のみコミットとプッシュを行う
+            git commit -m "docs: Automatically update documentation files"
+            git push
+          else
+            # 変更がない場合
+            echo "No changes to commit."
+          fi
