@@ -1,41 +1,35 @@
-import os
-import time
 import google.generativeai as genai
+import os
 
-# APIキー
-API_KEY = os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key=API_KEY)
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-def ask_gemini(question):
-    """Gemini に質問して回答を返す"""
-    try:
-        model = genai.GenerativeModel("gemini-2.0-flash")
-        response = model.generate_content(question)
-        return response.text
-    except Exception as e:
-        return f"Error: {e}"
+def load_questions():
+    path = "src/questions.txt"
+    if not os.path.exists(path):
+        return []
+    with open(path, "r", encoding="utf-8") as f:
+        return [q.strip() for q in f.readlines() if q.strip()]
+
+def answer(q):
+    model = genai.GenerativeModel("gemini-2.0-flash")
+    r = model.generate_content(q)
+    return r.text
 
 def main():
-    input_file = "questions.txt"
-    output_file = "output/answers.txt"
-
-    os.makedirs("output", exist_ok=True)
-
-    if not os.path.exists(input_file):
-        print("questions.txt がありません")
+    questions = load_questions()
+    if not questions:
+        print("No questions found.")
         return
 
-    with open(input_file, "r", encoding="utf-8") as f:
-        questions = [q.strip() for q in f.readlines() if q.strip()]
-
-    with open(output_file, "w", encoding="utf-8") as out:
+    os.makedirs("output", exist_ok=True)
+    with open("output/output.txt", "w", encoding="utf-8") as f:
         for q in questions:
-            print(f"質問: {q}")
-            answer = ask_gemini(q)
-            out.write(f"質問: {q}\n回答: {answer}\n\n")
-            time.sleep(1)
-
-    print(f"完了: {output_file} に保存されました")
+            print("Q:", q)
+            try:
+                a = answer(q)
+                f.write(f"Q: {q}\nA: {a}\n\n")
+            except Exception as e:
+                f.write(f"Q: {q}\nError: {e}\n\n")
 
 if __name__ == "__main__":
     main()
