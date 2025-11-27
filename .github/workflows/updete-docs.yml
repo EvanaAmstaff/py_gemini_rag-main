@@ -1,0 +1,75 @@
+# .github/workflows/update-docs.yml
+
+name: Update Documentation Files
+
+# ワークフローの実行トリガー
+on:
+  # 1. 手動実行を可能にする (Actionsタブの "Run workflow" ボタン)
+  workflow_dispatch:
+  
+  # 2. スケジュール実行 (毎週月曜日の朝9時 JST に実行)
+  # cronの書式はUTCなので、日本時間(JST)より9時間引く (月曜9時JST = 日曜0時UTC)
+  #schedule:
+  #  - cron: '0 0 * * 0'
+
+permissions:
+  contents: write
+
+# ワークフローが実行する一連のジョブ
+jobs:
+  update-docs-job:
+    # 実行環境の指定 (最新のUbuntuを使用)
+    runs-on: ubuntu-latest
+
+    # ジョブの各ステップ
+    steps:
+      # ステップ1: リポジトリのコードをチェックアウトする
+      # これにより、GitHub Actionsの実行環境にあなたのコードがコピーされる
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ステップ2: Python環境のセットアップ
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11' # 使用するPythonのバージョン
+
+      # ステップ3: 必要なPythonライブラリをインストールする
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ステップ4: ドキュメントをダウンロードするスクリプトを実行する
+      # py_wget.py を実行して、HTMLファイルをダウンロード
+      - name: Download documentation HTML files
+        run: python py_wget.py
+
+      # ステップ5: HTMLをテキストに変換するスクリプトを実行する
+      # local_html2text.py を実行して、TXTファイルを生成
+      - name: Convert HTML to Text
+        run: |
+          # GASドキュメント、gemini APIドキュメントの変換
+          python local_html2text.py
+
+      # ステップ6: 変更があった場合にコミット＆プッシュする
+      - name: Commit and push if there are changes
+        run: |
+          # Gitのユーザー設定
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # 変更をステージング
+          # 生成されたTXTファイルと、ダウンロードしたHTMLファイルの両方を対象にする
+          git add gas_docs_txt/ gemini_api_docs_txt/ gas_docs_html/ gemini_api_docs_html/
+          
+          # 変更があるかどうかを確認
+          # git diff --staged --quiet は変更がなければ終了コード0、あれば1を返す
+          if ! git diff --staged --quiet; then
+            # 変更がある場合のみコミットとプッシュを行う
+            git commit -m "docs: Automatically update documentation files"
+            git push
+          else
+            # 変更がない場合
+            echo "No changes to commit."
+          fi
