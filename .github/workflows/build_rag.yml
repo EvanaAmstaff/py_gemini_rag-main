@@ -7,32 +7,31 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  run-rag:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |
+          pip install --upgrade pip
           pip install -r requirements.txt
-          playwright install
 
-      - name: Run script
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: python src/main.py
+      - name: Run main script
+        run: python src/main.py > output.txt
 
-      - name: Upload output
+      - name: Upload result
         uses: actions/upload-artifact@v4
         with:
-          name: answers
-          path: output/output.txt
+          name: rag-output
+          path: output.txt
+
 
 
