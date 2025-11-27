@@ -1,35 +1,36 @@
-import google.generativeai as genai
 import os
+from google import genai
 
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-
-def load_questions():
-    path = "src/questions.txt"
+def load_questions(path="src/questions.txt"):
     if not os.path.exists(path):
         return []
     with open(path, "r", encoding="utf-8") as f:
-        return [q.strip() for q in f.readlines() if q.strip()]
-
-def answer(q):
-    model = genai.GenerativeModel("gemini-2.0-flash")
-    r = model.generate_content(q)
-    return r.text
+        return [line.strip() for line in f if line.strip()]
 
 def main():
+    api_key = os.environ.get("GOOGLE_API_KEY")
+    if not api_key:
+        raise ValueError("GOOGLE_API_KEY が設定されていません")
+
+    client = genai.Client(api_key=api_key)
+    model = "gemini-2.0-flash"
+
     questions = load_questions()
     if not questions:
-        print("No questions found.")
+        print("質問がありません（questions.txt を確認）")
         return
 
-    os.makedirs("output", exist_ok=True)
-    with open("output/output.txt", "w", encoding="utf-8") as f:
-        for q in questions:
-            print("Q:", q)
-            try:
-                a = answer(q)
-                f.write(f"Q: {q}\nA: {a}\n\n")
-            except Exception as e:
-                f.write(f"Q: {q}\nError: {e}\n\n")
+    print("=== Auto QA Results ===")
+    for q in questions:
+        print(f"\nQ: {q}")
+
+        try:
+            resp = client.models.generate_content(model=model, contents=q)
+            print(f"A: {resp.text}")
+        except Exception as e:
+            print(f"Error: {e}")
 
 if __name__ == "__main__":
     main()
+
+
