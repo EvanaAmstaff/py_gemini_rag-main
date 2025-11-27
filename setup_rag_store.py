@@ -1,48 +1,53 @@
-# setup_rag_store.py
 import os
-import glob
-from pathlib import Path
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import FAISS
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from google import genai
+from google.genai import types
+from dotenv import load_dotenv
 
-DATA_DIR = "data"
-STORE_DIR = "rag_store"
+print("🔧 RAG ストア構築スクリプト開始")
 
-def load_documents():
-    docs = []
-    for file in glob.glob(f"{DATA_DIR}/**/*.*", recursive=True):
-        if file.endswith(".md") or file.endswith(".txt"):
-            with open(file, "r", encoding="utf-8") as f:
-                docs.append(f.read())
-    return docs
+# ---- APIキー読込 ----
+load_dotenv()
+api_key = os.getenv("GEMINI_API_KEY")
 
-def main():
-    print("🔧 RAG ストア構築スクリプト開始")
+if not api_key:
+    raise ValueError("❌ GEMINI_API_KEY が見つかりません。.env または GitHub Secrets を確認してください。")
 
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key:
-        raise ValueError("❌ 環境変数 GEMINI_API_KEY が設定されていません")
+client = genai.Client(api_key=api_key)
 
-    print("📄 文書読み込み中...")
-    documents = load_documents()
-    if not documents:
-        raise ValueError(f"❌ {DATA_DIR} に文書がありません")
+# ---- ストア作成 ----
+print("📁 RAG ファイル検索ストアを作成中...")
+store = client.file_stores.create()
+print(f"✅ ストア作成成功: {store.name}")
 
-    print("✂️ 文書スプリット中...")
-    splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-    chunks = splitter.create_documents(documents)
+# ---- ドキュメントのフォルダ ----
+DOC_DIR = "gemini_api_docs_txt"
 
-    print("🧠 Embedding 生成中...")
-    embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
+if not os.path.exists(DOC_DIR):
+    raise ValueError(f"❌ {DOC_DIR} が存在しません。HTML→TXT の変換が実行されていません。")
 
-    print("📁 FAISS ベクトルストア作成...")
-    vector_store = FAISS.from_documents(chunks, embeddings)
+# ---- ファイル一覧 ----
+files = [f for f in os.listdir(DOC_DIR) if f.endswith(".txt")]
+print(f"📄 アップロードするファイル数: {len(files)}")
 
-    Path(STORE_DIR).mkdir(exist_ok=True)
-    vector_store.save_local(STORE_DIR)
+if not files:
+    raise ValueError("❌ アップロード対象の TXT ドキュメントが 0 件です。")
 
-    print("✅ RAG ストア構築完了！")
+# ---- アップロード ----
+for f in files:
+    path = os.path.join(DOC_DIR, f)
+    print(f"⬆️ アップロード中: {f}")
 
-if __name__ == "__main__":
-    main()
+    uploaded = client.files.upload(
+        file=path,
+        file_store_id=store.name
+    )
+
+print("🎉 すべてのファイルアップロードが完了")
+
+# ---- ストア名を保存 ----
+with open("setup_rag_store_file_search_store_name.txt", "w", encoding="utf-8") as fw:
+    fw.write(store.name)
+
+print(f"📌 ストア名を書き込みました: {store.name}")
+print("✅ RAG ストア構築が完了しました！")
+
