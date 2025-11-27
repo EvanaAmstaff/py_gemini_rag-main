@@ -1,63 +1,48 @@
-# setup_rag_store.py (【最終修正版】)
+# setup_rag_store.py
 import os
-import time
-from google import genai
-from dotenv import load_dotenv
+import glob
+from pathlib import Path
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.vectorstores import FAISS
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
-# --- .envファイルから環境変数を読み込む ---
-load_dotenv()
+DATA_DIR = "data"
+STORE_DIR = "rag_store"
 
-# --- 環境変数からAPIキーを取得 ---
-api_key = os.getenv("GEMINI_API_KEY")
-if not api_key:
-    raise ValueError("APIキーが.envファイルに設定されていません。'GEMINI_API_KEY=...'と記述してください。")
+def load_documents():
+    docs = []
+    for file in glob.glob(f"{DATA_DIR}/**/*.*", recursive=True):
+        if file.endswith(".md") or file.endswith(".txt"):
+            with open(file, "r", encoding="utf-8") as f:
+                docs.append(f.read())
+    return docs
 
-# --- Clientオブジェクトを作成 ---
-client = genai.Client(api_key=api_key) 
-doc_directorys = ["gas_docs_txt","gemini_api_docs_txt"]
-#doc_directorys = ["gas","gemini"]
+def main():
+    print("🔧 RAG ストア構築スクリプト開始")
 
-# --- 1. ファイル検索ストアの作成 ---
-print("ファイル検索ストアを作成しています...")
-file_search_store = client.file_search_stores.create(
-    config={'display_name': 'GAS Documentation RAG Store (new SDK)'}
-)
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        raise ValueError("❌ 環境変数 GEMINI_API_KEY が設定されていません")
 
-# --- 2. ディレクトリ内の全テキストファイルをアップロード ---
-print(f"'{doc_directorys}' ディレクトリからファイルのアップロードを開始します...")
-for doc_directory in doc_directorys:
-    for filename in os.listdir(doc_directory):
-        if filename.endswith(".txt"):
-            file_path = os.path.join(doc_directory, filename)
-            print(f"  - アップロード中: {filename}")
-            
-            # 最初のアップロード操作を開始
-            operation = client.file_search_stores.upload_to_file_search_store(
-                file=file_path,
-                file_search_store_name=file_search_store.name,
-                config={'display_name': filename}
-            )
-            
-            # ▼▼▼【ここからが修正箇所】▼▼▼
+    print("📄 文書読み込み中...")
+    documents = load_documents()
+    if not documents:
+        raise ValueError(f"❌ {DATA_DIR} に文書がありません")
 
-            # 操作が完了するまでループ (公式ドキュメントに準拠したシンプルな形式)
-            while not operation.done:
-                print("    - 処理中...")
-                time.sleep(5)
-                
-                # operationオブジェクト自体を渡して、最新の状態を取得する
-                operation = client.operations.get(operation)
+    print("✂️ 文書スプリット中...")
+    splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
+    chunks = splitter.create_documents(documents)
 
-            # ▲▲▲【ここまでが修正箇所】▲▲▲
+    print("🧠 Embedding 生成中...")
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
 
-print("\n✅ すべてのファイルのアップロードとインデックス作成が完了しました。")
-print("\n🎉 RAGシステムの準備が完了しました！")
-print("以下のストア名（ID）をコピーして、質問用スクリプトに貼り付けてください。")
-print("--------------------------------------------------")
-print(file_search_store.name)
-print("--------------------------------------------------")
-# ファイルを保存
-file_path = "setup_rag_store_file_search_store_name.txt"
-with open(file_path, 'w', encoding='utf-8') as f:
-    f.write(file_search_store.name)
-print(f"  保存先: {file_path}")
+    print("📁 FAISS ベクトルストア作成...")
+    vector_store = FAISS.from_documents(chunks, embeddings)
+
+    Path(STORE_DIR).mkdir(exist_ok=True)
+    vector_store.save_local(STORE_DIR)
+
+    print("✅ RAG ストア構築完了！")
+
+if __name__ == "__main__":
+    main()
